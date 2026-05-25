@@ -3,75 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Virtue Quest- SPF Authorized Speed Limiter Installer - Your Heavy Vehicle Solutions</title>
+<title>Virtue Quest - SPF Authorized Speed Limiter Installer</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #333;
-}
+  :root {
+    --primary-color: #0a1f44;
+    --accent-color: #ff6600;
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+    --whatsapp-color: #25D366;
+    --whatsapp-hover: #1da851;
+  }
 
-header {
-  background: #0a1f44;
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-header h1 {
-  margin: 0;
-}
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
 
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
+  /* Header & Navigation */
+  header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
 
-.hero {
-  background: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') no-repeat center/cover;
-  color: white;
-  padding: 100px 30px;
-  text-align: center;
-}
+  header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
 
-.hero h2 {
-  font-size: 40px;
-}
+  nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
 
-.btn {
-  background: #ff6600;
-  color: white;
-  padding: 12px 20px;
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-}
+  nav a:hover {
+    color: var(--accent-color);
+  }
 
-.section {
-  padding: 50px 30px;
-  text-align: center;
-}
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(10, 31, 68, 0.8), rgba(10, 31, 68, 0.8)), 
+                url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') no-repeat center/cover;
+    color: white;
+    padding: 120px 10%;
+    text-align: center;
+  }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
+  .hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
 
-.card {
-  border: 1px solid #ddd;
-  padding: 20px;
-}
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
 
-.footer {
-  background: #0a1f44;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+  /* Universal Buttons */
+  .btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 14px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn:hover {
+    background: #e05500;
+    transform: translateY(-2px);
+  }
+
+  /* Section Layouts */
+  .section {
+    padding: 80px 10%;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+
+  /* Grid Layout for Cards */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #eef2f5;
+    padding: 35px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .card p {
+    color: #666;
+    font-size: 15px;
+  }
+
+  /* Trust Indicators Section */
+  .why-choose-us {
+    background: var(--light-bg);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .benefit-item {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* Quotation and Booking Form */
+  #quotation {
+    background: #ffffff;
+  }
+
+  #quoteForm {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: left;
+  }
+
+  #quoteForm label {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  #quoteForm input,
+  #quoteForm select,
+  #quoteForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+
+  #quoteForm input:focus,
+  #quoteForm select:focus,
+  #quoteForm textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+
+  #quoteForm button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--whatsapp-color);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  #quoteForm button:hover {
+    background: var(--whatsapp-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Contact Details Section */
+  .contact-info {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-info p {
+    margin: 15px 0;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    border-top: 3px solid var(--accent-color);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 15px;
+    }
+    nav {
+      margin-top: 15px;
+    }
+    nav a {
+      margin: 0 10px;
+    }
+    .hero h2 {
+      font-size: 32px;
+    }
+    #quoteForm {
+      padding: 25px;
+    }
+  }
 </style>
 </head>
 
@@ -81,62 +290,143 @@ nav a {
   <h1>Virtue Quest</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <a href="#services">Services</a>
+    <a href="#quotation">Book Installation</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Efficient and Reliable Mobile On Site Installation</h2>
+  <h2>Efficient and Reliable Mobile On-Site Installation</h2>
   <p>SPF-Approved Speed Limiter Installation & Fleet Services</p>
-  <a href="#" class="btn">Get a Quote</a>
+  <a href="#quotation" class="btn">Get a Quote / Book Now</a>
 </section>
 
-<section class="section">
+<section class="section" id="services">
   <h2>Our Services</h2>
   <div class="services">
-
     <div class="card">
       <h3>Speed Limiter Installation</h3>
-      <p>Certified installation compliant with regulations.</p>
+      <p>Certified installation fully compliant with SPF regulations.</p>
     </div>
-
     <div class="card">
       <h3>Fleet Maintenance</h3>
-      <p>Reliable servicing for commercial vehicles.</p>
+      <p>Reliable and comprehensive servicing tailored for commercial fleets.</p>
     </div>
-
     <div class="card">
       <h3>Mobile Installation</h3>
-      <p>We come to your site islandwide.</p>
+      <p>Convenient on-site deployment to your base location islandwide.</p>
     </div>
-
     <div class="card">
-      <h3>Nett Price -- No GST</h3>
-      <p>5 Years Warranty!.</p>
+      <h3>Nett Price — No GST</h3>
+      <p>Transparent pricing backed entirely by an extensive 5-year warranty!</p>
     </div>
-
   </div>
 </section>
 
-<section class="section" style="background:#f5f5f5;">
+<section class="section why-choose-us">
   <h2>Why Choose Us</h2>
-  <p>✔️ SPF Approved Installer</p>
-  <p>✔️ Fast Turnaround</p>
-  <p>✔️ Competitive Pricing</p>
-  <p>✔️ Trusted by Fleet Operators</p>
+  <div class="benefits-grid">
+    <div class="benefit-item">✔️ SPF Approved Installer</div>
+    <div class="benefit-item">✔️ Fast Turnaround</div>
+    <div class="benefit-item">✔️ Competitive Pricing</div>
+    <div class="benefit-item">✔️ Trusted by Fleet Operators</div>
+  </div>
 </section>
 
-<section class="section">
+<section class="section" id="quotation">
+  <h2>Request Quotation & Booking</h2>
+  <form id="quoteForm">
+    <label for="company">Company Name</label>
+    <input type="text" id="company" required>
+
+    <label for="address">Company Address</label>
+    <input type="text" id="address" required>
+
+    <label for="person">Contact Person</label>
+    <input type="text" id="person" required>
+
+    <label for="phone">Contact Number</label>
+    <input type="text" id="phone" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email">
+
+    <label for="vehicle">Vehicle Type</label>
+    <select id="vehicle">
+      <option>ISUZU</option>
+      <option>TOYOTA</option>
+      <option>HINO</option>
+      <option>MITSUBISHI</option>
+      <option>NISSAN CABSTAR</option>
+      <option>Others</option>
+    </select>
+
+    <label for="plate">Vehicle Plate Number</label>
+    <input type="text" id="plate">
+
+    <label for="bookingDate">Preferred Installation Date</label>
+    <input type="date" id="bookingDate" required>
+
+    <label for="remarks">Additional Remarks</label>
+    <textarea id="remarks" rows="5"></textarea>
+
+    <button type="button" onclick="sendWhatsApp()">
+      Submit via WhatsApp
+    </button>
+  </form>
+</section>
+
+<section class="section" id="contact">
   <h2>Contact Us</h2>
-  <p>📞 +65 94232000</p>
-  <p>📍 Singapore</p>
-  <a href="#" class="btn">WhatsApp Us</a>
+  <div class="contact-info">
+    <p>📞 <strong>Phone:</strong> +65 94232000</p>
+    <p>📍 <strong>Location:</strong> Singapore</p>
+  </div>
+  <a href="https://wa.me/6594232000" target="_blank" class="btn" style="background: var(--whatsapp-color);">Chat Instantly via WhatsApp</a>
 </section>
 
 <footer class="footer">
   <p>© 2026 Virtue Quest. All rights reserved.</p>
 </footer>
+
+<script>
+function sendWhatsApp(){
+  let company = document.getElementById("company").value;
+  let address = document.getElementById("address").value;
+  let person = document.getElementById("person").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let vehicle = document.getElementById("vehicle").value;
+  let plate = document.getElementById("plate").value;
+  let bookingDate = document.getElementById("bookingDate").value;
+  let remarks = document.getElementById("remarks").value;
+
+  // Form validation validation check before passing data
+  if(!company || !address || !person || !phone || !bookingDate){
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  let message =
+`SPF Speed Limiter Installation Booking
+
+Company Name: ${company}
+Company Address: ${address}
+Contact Person: ${person}
+Phone Number: ${phone}
+Email: ${email}
+Vehicle Type: ${vehicle}
+Vehicle Plate: ${plate}
+Preferred Installation Date: ${bookingDate}
+
+Remarks:
+${remarks}`;
+
+  let whatsappURL = "https://wa.me/6594232000?text=" + encodeURIComponent(message);
+  window.open(whatsappURL, "_blank");
+}
+</script>
 
 </body>
 </html>
