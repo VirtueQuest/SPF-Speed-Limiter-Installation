@@ -345,3 +345,183 @@
     <a href="#deadlines">TP Mandate Deadlines</a>
     <a href="#services">Services</a>
     <a href="#quotation">Book Installation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Official SPF-Authorized Speed Limiter Installer</h2>
+  <p>Protect Your Fleet Compliance & Secure Your Road Tax Renewals Instantly</p>
+  <div class="alert-bar">🚨 WARNING: Non-compliance faces Traffic Police fines up to S$10,000 & bizSAFE suspension!</div>
+  <br>
+  <a href="#quotation" class="btn">Get a Quote / Book Now</a>
+</section>
+
+<section class="section" id="deadlines">
+  <h2>Traffic Police Statutory Enforcement Deadlines</h2>
+  <p style="max-width:800px; margin: 0 auto 30px auto; color:#222; font-weight: 500;">
+    The Singapore Police Force (SPF) requires all diesel, petrol, and electric lorries with a Maximum Laden Weight (MLW) between 3,501kg and 12,000kg to be retrofitted with a speed limiter restricted to 60km/h. Check your specific timeline below:
+  </p>
+  
+  <div class="compliance-table-container">
+    <table class="compliance-table">
+      <thead>
+        <tr>
+          <th>Lorry Registration Date</th>
+          <th>Maximum Laden Weight (MLW)</th>
+          <th>Enforcement Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Registered <strong>Before</strong> 1 Jan 2018</td>
+          <td>5,001kg – 12,000kg</td>
+          <td style="color:var(--alert-color); font-weight:bold;">Passed (1 Jan 2026)</td>
+        </tr>
+        <tr>
+          <td>Registered <strong>Before</strong> 1 Jan 2018</td>
+          <td>3,501kg – 5,000kg (e.g. 10ft/14ft)</td>
+          <td style="color:var(--accent-color); font-weight:bold;">1 July 2026 (Upcoming)</td>
+        </tr>
+        <tr>
+          <td>Registered <strong>On/After</strong> 1 Jan 2018</td>
+          <td>5,001kg – 12,000kg</td>
+          <td>1 January 2027</td>
+        </tr>
+        <tr>
+          <td>Registered <strong>On/After</strong> 1 Jan 2018</td>
+          <td>3,501kg – 5,000kg</td>
+          <td>1 July 2027</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="services" style="background-color: var(--light-bg);">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Speed Limiter Installation</h3>
+      <p>Certified 60km/h calibration and official tamper-proof sealing by an SPF Authorized Agent.</p>
+    </div>
+    <div class="card">
+      <h3>No Void in Vehicle Warranty</h3>
+      <p>Advanced plug-and-play connections. Absolutely no cutting of factory wiring harnesses.</p>
+    </div>
+    <div class="card">
+      <h3>On-Site Mobile Teams</h3>
+      <p>Convenient, rapid deployments right at your yard or company location islandwide to reduce fleet downtime.</p>
+    </div>
+    <div class="card">
+      <h3>Transparent Pricing</h3>
+      <p>Nett price structure with absolute clarity. Backed fully by our comprehensive 5-year hardware warranty.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section why-choose-us">
+  <h2>Why Choose Virtue Quest</h2>
+  <div class="benefits-grid">
+    <div class="benefit-item">✔️ Official SPF Approved Installer</div>
+    <div class="benefit-item">✔️ 30-Min Fast Turnaround</div>
+    <div class="benefit-item">✔️ Passes LTA/bizSAFE Risk Audits</div>
+    <div class="benefit-item">✔️ Eligible for Up to 50% PSG Grants</div>
+  </div>
+</section>
+
+<section class="section" id="quotation">
+  <h2>Request Quotation & Fleet Booking</h2>
+  <form id="quoteForm">
+    <label for="company">Company Name</label>
+    <input type="text" id="company" placeholder="e.g. Logistics Pte Ltd" required>
+
+    <label for="address">Company Address / Fleet Location</label>
+    <input type="text" id="address" placeholder="e.g. 12 Tuas South Ave..." required>
+
+    <label for="person">Contact Person</label>
+    <input type="text" id="person" required>
+
+    <label for="phone">Contact Number (Mobile)</label>
+    <input type="text" id="phone" placeholder="e.g. 91234567" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email">
+
+    <label for="vehicle">Lorry Brand / Model</label>
+    <select id="vehicle">
+      <option>ISUZU (e.g. NPR / NQR)</option>
+      <option>TOYOTA (e.g. Dyna)</option>
+      <option>HINO (e.g. 300 / 500)</option>
+      <option>MITSUBISHI FUSO (e.g. Canter)</option>
+      <option>NISSAN CABSTAR</option>
+      <option>Others</option>
+    </select>
+
+    <label for="plate">Vehicle Plate Number(s)</label>
+    <input type="text" id="plate" placeholder="e.g. GBF1234A, GBA5678Z (Separate with commas)">
+
+    <label for="bookingDate">Preferred On-Site Installation Date</label>
+    <input type="date" id="bookingDate" required>
+
+    <label for="remarks">Additional Remarks (e.g., Number of trucks, specific deadline issues)</label>
+    <textarea id="remarks" rows="5" placeholder="Let us know if you need urgent support or bulk pricing..."></textarea>
+
+    <button type="button" onclick="sendWhatsApp()">
+      Submit via WhatsApp
+    </button>
+  </form>
+</section>
+
+<section class="section" id="contact" style="background-color: var(--light-bg);">
+  <h2>Contact Our Operations Hotline</h2>
+  <div class="contact-info">
+    <p>📞 <strong>Phone:</strong> +65 94232000</p>
+    <p>📍 <strong>Location:</strong> Singapore Islandwide On-Site Fleet Deployments</p>
+  </div>
+  <a href="https://wa.me/6594232000" target="_blank" class="btn" style="background: var(--whatsapp-color);">Chat Instantly via WhatsApp</a>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Virtue Quest. Official Singapore Traffic Police Speed Limiter Authorized Agent. All rights reserved.</p>
+</footer>
+
+<script>
+function sendWhatsApp(){
+  let company = document.getElementById("company").value;
+  let address = document.getElementById("address").value;
+  let person = document.getElementById("person").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let vehicle = document.getElementById("vehicle").value;
+  let plate = document.getElementById("plate").value;
+  let bookingDate = document.getElementById("bookingDate").value;
+  let remarks = document.getElementById("remarks").value;
+
+  if(!company || !address || !person || !phone || !bookingDate){
+    alert("Please fill in all required fields to submit your registration request.");
+    return;
+  }
+
+  let message =
+`🚨 SPF Speed Limiter Installation Booking Request
+
+🏢 Company Name: ${company}
+📍 Fleet Address: ${address}
+👤 Contact Person: ${person}
+📱 Phone Number: ${phone}
+📧 Email: ${email || 'N/A'}
+🚚 Vehicle Type: ${vehicle}
+🔢 Vehicle Plate(s): ${plate || 'N/A'}
+📅 Preferred Date: ${bookingDate}
+
+💬 Remarks/Fleet Volume:
+${remarks || 'No additional remarks.'}`;
+
+  let whatsappURL = "https://wa.me/6594232000?text=" + encodeURIComponent(message);
+  window.open(whatsappURL, "_blank");
+}
+</script>
+
+</body>
+</html>
