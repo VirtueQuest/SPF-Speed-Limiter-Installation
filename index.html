@@ -1,248 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>The ThirdEye — Admin & User Modes | Location Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #eef2ff; color: #0f172a; }
-        .app-container { max-width: 500px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 40px rgba(0,0,0,0.08); display: flex; flex-direction: column; position: relative; }
-        .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; }
-        .login-card { background: white; max-width: 340px; width: 90%; border-radius: 48px; padding: 32px 24px; text-align: center; box-shadow: 0 25px 50px -12px black; }
-        .login-card h2 { font-size: 28px; margin-bottom: 8px; background: linear-gradient(135deg, #0b2b26, #1e6f5c); background-clip: text; -webkit-background-clip: text; color: transparent; }
-        .login-card input { width: 100%; padding: 14px 16px; margin: 12px 0; border: 1px solid #e2e8f0; border-radius: 60px; font-size: 15px; }
-        .login-card button { width: 100%; padding: 14px; border-radius: 60px; font-weight: 700; border: none; margin-top: 8px; cursor: pointer; }
-        .btn-login { background: #1e6f5c; color: white; }
-        .btn-demo { background: #f1f5f9; color: #1e293b; margin-top: 8px; }
-        .role-badge { position: fixed; top: 12px; right: 20px; background: #1e293b; color: white; padding: 4px 14px; border-radius: 40px; font-size: 11px; font-weight: 600; z-index: 50; }
-        .status-bar { padding: 12px 20px 6px; font-size: 14px; font-weight: 500; display: flex; justify-content: space-between; border-bottom: 1px solid #eef2f8; }
-        .main-header { padding: 16px 20px 8px; }
-        .logo-area h1 { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #0b2b26, #1e6f5c); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.3px; }
-        .logo-area p { font-size: 13px; color: #5b6e8c; }
-        .wallet-card { background: #0f2b3d; margin: 12px 20px 20px; border-radius: 28px; padding: 16px 20px; color: white; display: flex; justify-content: space-between; align-items: center; }
-        .stats-row { display: flex; justify-content: space-between; padding: 8px 20px 20px; gap: 12px; border-bottom: 1px solid #edf2f7; }
-        .stat-item { background: #f8fafc; flex: 1; text-align: center; padding: 12px 4px; border-radius: 20px; }
-        .stat-number { font-size: 22px; font-weight: 800; color: #1e6f5c; }
-        .bottom-nav { background: white; border-top: 1px solid #eef2f8; display: flex; justify-content: space-around; padding: 8px 16px 14px; position: sticky; bottom: 0; }
-        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; font-size: 12px; font-weight: 500; color: #94a3b8; cursor: pointer; padding: 6px 12px; border-radius: 30px; }
-        .nav-item.active { color: #1e6f5c; background: #e6f7f2; }
-        .main-content { flex: 1; padding: 20px; overflow-y: auto; max-height: calc(100vh - 280px); }
-        .page { display: none; animation: fade 0.2s ease; }
-        .page.active-page { display: block; }
-        @keyframes fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
-        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: baseline; }
-        .report-card { background: #ffffff; border-radius: 24px; padding: 16px; margin-bottom: 14px; border: 1px solid #edf2f7; transition: 0.2s; }
-        .badge-free { background: #e0f2e9; color: #1e6f5c; padding: 4px 12px; border-radius: 40px; font-weight: 700; font-size: 12px; }
-        .badge-paid { background: #fee2e2; color: #b91c1c; padding: 4px 12px; border-radius: 40px; font-weight: 700; font-size: 12px; }
-        .unlock-btn { background: #1e6f5c; border: none; padding: 6px 16px; border-radius: 40px; color: white; font-weight: 600; font-size: 12px; cursor: pointer; }
-        .media-preview-small { margin-top: 10px; border-radius: 20px; overflow: hidden; background: #f1f5f9; max-height: 180px; }
-        .media-preview-small img, .media-preview-small video { width: 100%; max-height: 180px; object-fit: cover; }
-        .form-card { background: #ffffff; border-radius: 28px; padding: 20px; border: 1px solid #eef2f6; margin-bottom: 20px; }
-        input, textarea, select { width: 100%; padding: 14px 16px; border: 1px solid #e2e8f0; border-radius: 20px; font-family: 'Inter', sans-serif; font-size: 14px; }
-        .submit-btn { background: #0f2b3d; width: 100%; padding: 14px; border-radius: 40px; font-weight: 700; color: white; border: none; cursor: pointer; margin-top: 6px; }
-        .toast-msg { position: fixed; bottom: 80px; left: 20px; right: 20px; background: #1e293b; color: white; text-align: center; padding: 12px; border-radius: 60px; font-size: 13px; z-index: 200; }
-        .admin-panel { background: #fef9e3; border-left: 5px solid #eab308; border-radius: 24px; padding: 16px; margin-bottom: 20px; }
-        .admin-title { font-weight: 800; margin-bottom: 12px; color: #92400e; display: flex; align-items: center; gap: 8px; }
-        .admin-grid { display: flex; flex-direction: column; gap: 12px; }
-        .admin-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-        .admin-row input { flex: 1; padding: 10px 12px; font-size: 13px; }
-        .admin-btn { background: #eab308; border: none; padding: 10px 16px; border-radius: 40px; font-weight: 600; cursor: pointer; }
-        .danger-btn { background: #ef4444; color: white; }
-        .permission-toggle { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; background: #f1f5f9; padding: 10px 14px; border-radius: 60px; }
-        .gps-badge { background: #eef2ff; color: #1e40af; padding: 2px 8px; border-radius: 30px; font-size: 10px; font-family: monospace; }
-        .like-btn { background: none; border: none; color: #e11d48; cursor: pointer; margin-left: 8px; }
-        .logout-btn { background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 40px; font-size: 12px; margin-left: 12px; cursor: pointer; }
-        .flex-between { display: flex; justify-content: space-between; align-items: center; }
-        .restricted-msg { text-align: center; padding: 40px; color: #94a3b8; }
-        i.fa, i.far, i.fas { margin-right: 4px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtue Quest- SPF Authorized Speed Limiter Installer - Your Heavy Vehicle Solutions</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: var(--sky-green);
+}
+
+header {
+  background: #0a1f44;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') no-repeat center/cover;
+  color: white;
+  padding: 100px 30px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.btn {
+  background: #ff6600;
+  color: white;
+  padding: 12px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.section {
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.footer {
+  background: #0a1f44;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
 </head>
+
 <body>
-<div id="loginOverlay" class="login-overlay">
-    <div class="login-card">
-        <i class="fas fa-eye" style="font-size: 48px; color: #1e6f5c; margin-bottom: 12px;"></i>
-        <h2>The ThirdEye</h2>
-        <p style="margin-bottom: 20px; color: #5b6e8c;">First-hand location intelligence</p>
-        <input type="text" id="loginUsername" placeholder="Username" value="admin">
-        <input type="password" id="loginPassword" placeholder="Password" value="admin123">
-        <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login as Admin</button>
-        <button class="btn-demo" id="demoUserBtn"><i class="fas fa-user"></i> Quick Login as User (demo)</button>
-        <p style="font-size: 11px; margin-top: 16px;">Admin: admin / admin123 | User: any name (auto-create)</p>
-    </div>
-</div>
 
-<div class="app-container" id="appContainer" style="display: none;">
-    <div class="role-badge" id="roleBadge"><span id="roleText">User Mode</span> <button id="globalLogoutBtn" class="logout-btn" style="margin-left: 8px;"><i class="fas fa-sign-out-alt"></i> Logout</button></div>
-    <div class="status-bar"><span>9:41</span><span><i class="fas fa-signal"></i> <i class="fas fa-battery-full"></i></span></div>
-    <div class="main-header"><div class="logo-area"><h1><i class="fas fa-eye"></i> The ThirdEye</h1><p>Live GPS · Hyperlocal Intel</p></div></div>
+<header>
+  <h1>Virtue Quest</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-    <div class="wallet-card"><div><div class="wallet-label">Your wallet</div><div class="wallet-coins"><span id="walletBalance">0</span> <small>coins</small></div></div><button class="add-coins-btn" id="topUpBtn" style="background:rgba(255,255,255,0.2); border:none; padding:8px 16px; border-radius:40px; color:white;">+ Add 50 coins</button></div>
+<section class="hero">
+  <h2>Efficient and Reliable Mobile On Site Installation</h2>
+  <p>SPF-Approved Speed Limiter Installation & Fleet Services</p>
+  <a href="#" class="btn">Get a Quote</a>
+</section>
 
-    <div class="stats-row">
-        <div class="stat-item"><div class="stat-number" id="reportsToday">0</div><div class="stat-label">Today's reports</div></div>
-        <div class="stat-item"><div class="stat-number" id="openRequestsCount">0</div><div class="stat-label">Open requests</div></div>
-        <div class="stat-item"><div class="stat-number" id="paidOut">0</div><div class="stat-label">Paid out (month)</div></div>
-    </div>
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services">
 
-    <div class="main-content">
-        <!-- FEED PAGE (User & Admin permissions controlled) -->
-        <div id="feedPage" class="page active-page">
-            <div class="section-title"><span>📍 Live Reports <span id="hourBadge">(last 3h)</span></span><button id="clearAllBtn" style="background:none; border:none; color:#ef4444; font-size:12px; display:none;" class="admin-only"><i class="fas fa-trash"></i> Clear all</button></div>
-            <div id="feedList"></div>
-            <div id="openRequestsFeedSection"></div>
-            
-            <!-- ADMIN DASHBOARD (visible only to admin) -->
-            <div id="adminDashboard" class="admin-panel" style="display: none;">
-                <div class="admin-title"><i class="fas fa-user-shield"></i> Admin Control Hub</div>
-                <div class="admin-grid">
-                    <div class="permission-toggle"><span><i class="fas fa-lock-open"></i> User can upload reports</span> <label class="switch"><input type="checkbox" id="permUpload" checked> <span style="margin-left:8px;">✅</span></label></div>
-                    <div class="permission-toggle"><span><i class="fas fa-hand-holding-usd"></i> User can post requests</span> <input type="checkbox" id="permRequest" checked style="width:20px;"></div>
-                    <div class="permission-toggle"><span><i class="fas fa-coins"></i> User can unlock paid reports</span> <input type="checkbox" id="permUnlock" checked></div>
-                    <div class="permission-toggle"><span><i class="fas fa-heart"></i> User can like & interact</span> <input type="checkbox" id="permLike" checked></div>
-                    <div class="admin-row"><input type="text" id="adminTargetUser" placeholder="Username to credit"> <input type="number" id="adminCoinAmount" placeholder="Coins"> <button id="adminAddCoinsBtn" class="admin-btn"><i class="fas fa-coins"></i> Add Coins</button></div>
-                    <div class="admin-row"><button id="adminResetAllBtn" class="admin-btn danger-btn"><i class="fas fa-database"></i> Reset Demo Data</button> <button id="adminViewAllUsersBtn" class="admin-btn"><i class="fas fa-users"></i> Show Users</button></div>
-                    <div id="userListAdmin" style="font-size:12px; margin-top:8px;"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- UPLOAD PAGE -->
-        <div id="uploadPage" class="page">
-            <div class="section-title"><i class="fas fa-camera"></i> Share intel</div>
-            <div class="form-card">
-                <div class="form-group"><label>📍 Location *</label><input type="text" id="uploadLocation" placeholder="e.g., Orchard MRT Exit A"></div>
-                <div class="form-group"><label>📝 Description</label><textarea id="uploadDesc" rows="2" placeholder="Crowd, queue status..."></textarea></div>
-                <div class="form-group"><label>📸 Media</label><div class="media-upload-area" id="mediaUploadArea" style="border:2px dashed #cbd5e1; border-radius:20px; padding:20px; text-align:center; cursor:pointer;"><i class="fas fa-cloud-upload-alt" style="font-size: 28px;"></i><p>Click to select</p><input type="file" id="uploadMedia" accept="image/*,video/*" style="display:none;"></div><div id="uploadPreview" style="margin-top:12px; border-radius:20px; overflow:hidden; display:none;"></div></div>
-                <div class="form-group"><label>🔒 Visibility</label><select id="priceSelect"><option value="free">Free for all</option><option value="paid">Paid (15 coins)</option></select></div>
-                <button class="submit-btn" id="publishBtn"><i class="fas fa-cloud-upload-alt"></i> Publish (GPS stamped)</button>
-            </div>
-        </div>
-
-        <!-- REQUESTS PAGE -->
-        <div id="requestsPage" class="page">
-            <div class="section-title">📢 Request live data</div>
-            <div class="form-card">
-                <p style="margin-bottom: 12px;">Cost: 20 coins + reward to responder.</p>
-                <div class="form-group"><label>📍 Target location</label><input type="text" id="reqLoc" placeholder="e.g., Jewel Shake Shack queue"></div>
-                <div class="form-group"><label>📋 Details</label><textarea id="reqDetails" rows="2" placeholder="Need video of entrance..."></textarea></div>
-                <div class="form-group"><label>💰 Reward</label><input type="number" id="reqReward" value="8" min="5" max="50"></div>
-                <button class="submit-btn" id="createReqBtn"><i class="fas fa-hand-holding-usd"></i> Post request (20+reward coins)</button>
-            </div>
-            <div class="section-title">My requests</div><div id="userRequestsList"></div>
-        </div>
+    <div class="card">
+      <h3>Speed Limiter Installation</h3>
+      <p>Certified installation compliant with regulations.</p>
     </div>
 
-    <div class="bottom-nav"><button class="nav-item active" data-nav="feed"><i class="fas fa-newspaper"></i><span>Feed</span></button><button class="nav-item" data-nav="upload"><i class="fas fa-camera"></i><span>Upload</span></button><button class="nav-item" data-nav="requests"><i class="fas fa-clipboard-list"></i><span>Requests</span></button></div>
-</div>
+    <div class="card">
+      <h3>Fleet Maintenance</h3>
+      <p>Reliable servicing for commercial vehicles.</p>
+    </div>
 
-<script>
-    // ==================== AUTH & ROLE SYSTEM ====================
-    let currentUser = { username: null, role: null, coins: 100 };
-    let reports = [], requestsList = [];
-    let nextReportId = 101, nextRequestId = 301;
-    let selectedFileData = null, selectedFileType = null;
-    
-    // Permissions (admin controlled)
-    let permissions = { canUpload: true, canRequest: true, canUnlock: true, canLike: true };
-    
-    // Helper functions
-    function showToast(msg) { let t = document.querySelector('.toast-msg'); if(t) t.remove(); const toast = document.createElement('div'); toast.className = 'toast-msg'; toast.innerText = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2500); }
-    function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])); }
-    function getCurrentDateTime() { return new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' }); }
-    function isWithin3Hours(ts) { return (Date.now() - ts) <= 3 * 3600000; }
-    function getGeoString() { return new Promise((resolve) => { if(!navigator.geolocation) resolve("Unknown"); else navigator.geolocation.getCurrentPosition(pos => resolve(`${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)}`), () => resolve("Unavailable")); }); }
-    
-    // Storage
-    function loadGlobalData() {
-        const storedReports = localStorage.getItem('thirdeye_reports_global');
-        if(storedReports) reports = JSON.parse(storedReports);
-        else seedDemoReports();
-        const storedReqs = localStorage.getItem('thirdeye_requests_global');
-        if(storedReqs) requestsList = JSON.parse(storedReqs);
-        else requestsList = [];
-        if(reports.length) nextReportId = Math.max(...reports.map(r=>r.id)) + 1;
-        if(requestsList.length) nextRequestId = Math.max(...requestsList.map(r=>r.id)) + 1;
-    }
-    function saveGlobalData() { localStorage.setItem('thirdeye_reports_global', JSON.stringify(reports)); localStorage.setItem('thirdeye_requests_global', JSON.stringify(requestsList)); }
-    function seedDemoReports() {
-        const now = Date.now();
-        reports = [
-            { id:101, location:"Sheng Siong Tampines", description:"Short queue, 2 min wait", mediaData:null, mediaType:"image", isPaid:false, priceCoins:0, timestamp:now-600000, dateTimeStr:"10 min ago", geo:"1.3521,103.8198", author:"rachel_t", unlockCount:12, earnedCoins:0, likes:7, views:234 },
-            { id:102, location:"ABC Shop Bugis", description:"Long queue 25min", mediaData:null, mediaType:"image", isPaid:true, priceCoins:15, timestamp:now-1800000, dateTimeStr:"30 min ago", geo:"1.3005,103.8568", author:"marcus", unlockCount:45, earnedCoins:30, likes:23, views:512 },
-            { id:103, location:"IKEA IMM Lot", description:"Parking L4 full, L3 free", mediaData:null, mediaType:"image", isPaid:false, priceCoins:0, timestamp:now-240000, dateTimeStr:"4 min ago", geo:"1.3262,103.7421", author:"priya_s", unlockCount:8, earnedCoins:0, likes:4, views:98 }
-        ];
-        saveGlobalData();
-    }
-    
-    // Save user-specific coin balance
-    function saveUserCoins() { localStorage.setItem(`user_coins_${currentUser.username}`, currentUser.coins); }
-    function loadUserCoins() { const saved = localStorage.getItem(`user_coins_${currentUser.username}`); if(saved) currentUser.coins = parseInt(saved); else currentUser.coins = (currentUser.role === 'admin' ? 500 : 120); }
-    
-    // Admin functions
-    function adminAddCoinsToUser() { const target = document.getElementById('adminTargetUser').value.trim(); const amount = parseInt(document.getElementById('adminCoinAmount').value); if(!target || isNaN(amount)) return showToast("Enter username & amount"); if(target === currentUser.username) { currentUser.coins += amount; saveUserCoins(); updateUI(); showToast(`Added ${amount} coins to ${target}`); } else { showToast(`Demo: only current user can be credited. Use admin panel.`); } document.getElementById('adminCoinAmount').value = ''; }
-    function resetDemoData() { if(confirm("Reset all reports and requests?")) { seedDemoReports(); requestsList = []; saveGlobalData(); updateUI(); showToast("Data reset to demo"); } }
-    function applyPermissions() { permissions.canUpload = document.getElementById('permUpload').checked; permissions.canRequest = document.getElementById('permRequest').checked; permissions.canUnlock = document.getElementById('permUnlock').checked; permissions.canLike = document.getElementById('permLike').checked; updateUIBasedOnPermissions(); showToast("Permissions updated"); }
-    function updateUIBasedOnPermissions() { const uploadBtn = document.querySelector('[data-nav="upload"]'); const reqNav = document.querySelector('[data-nav="requests"]'); if(uploadBtn) uploadBtn.style.opacity = permissions.canUpload ? '1' : '0.4'; if(reqNav) reqNav.style.opacity = permissions.canRequest ? '1' : '0.4'; }
-    
-    // Report actions
-    async function publishReport() {
-        if(!permissions.canUpload && currentUser.role !== 'admin') { showToast("Admin disabled uploads for users"); return; }
-        const loc = document.getElementById('uploadLocation').value.trim(); const desc = document.getElementById('uploadDesc').value.trim(); const priceMode = document.getElementById('priceSelect').value;
-        if(!loc) return showToast("Location required"); if(!selectedFileData) return showToast("Select media");
-        const geo = await getGeoString();
-        const newReport = { id:nextReportId++, location:loc, description:desc || "Live update", mediaData:selectedFileData, mediaType:selectedFileType, isPaid:priceMode==='paid', priceCoins:priceMode==='paid'?15:0, timestamp:Date.now(), dateTimeStr:getCurrentDateTime(), geo:geo, author:currentUser.username, unlockCount:0, earnedCoins:0, likes:0, views:0 };
-        reports.unshift(newReport); saveGlobalData();
-        document.getElementById('uploadLocation').value = ''; document.getElementById('uploadDesc').value = ''; selectedFileData=null; document.getElementById('uploadPreview').style.display='none'; document.getElementById('uploadMedia').value='';
-        showToast("✅ Published + GPS stamped!"); updateUI(); switchToPage('feed');
-    }
-    function unlockReport(id) { if(!permissions.canUnlock && currentUser.role!=='admin') return showToast("Admin disabled unlocking"); const r = reports.find(r=>r.id===id); if(!r||!r.isPaid) return; if(currentUser.coins < r.priceCoins) return showToast(`Need ${r.priceCoins} coins`); currentUser.coins -= r.priceCoins; const idx = reports.findIndex(rr=>rr.id===id); if(idx!==-1) { reports[idx].earnedCoins = (reports[idx].earnedCoins||0)+10; reports[idx].unlockCount++; } saveUserCoins(); saveGlobalData(); updateUI(); showToast(`Unlocked! -${r.priceCoins} coins`); }
-    function toggleLike(id) { if(!permissions.canLike && currentUser.role!=='admin') return showToast("Liking disabled"); const r = reports.find(r=>r.id===id); if(r) { r.likes = (r.likes||0)+1; saveGlobalData(); updateUI(); } }
-    function deleteReport(id) { const r = reports.find(r=>r.id===id); if(r && (r.author === currentUser.username || currentUser.role === 'admin')) { reports = reports.filter(rr=>rr.id!==id); saveGlobalData(); updateUI(); showToast("Deleted"); } else showToast("Not authorized"); }
-    function createRequest() { if(!permissions.canRequest && currentUser.role!=='admin') return showToast("Admin disabled requests"); const loc = document.getElementById('reqLoc').value.trim(); const det = document.getElementById('reqDetails').value.trim(); let rew = parseInt(document.getElementById('reqReward').value); if(isNaN(rew)) rew=8; const total = 20+rew; if(currentUser.coins < total) return showToast(`Need ${total} coins`); currentUser.coins -= total; requestsList.push({ id:nextRequestId++, location:loc, details:det||"Request for live media", reward:rew, requester:currentUser.username, totalCost:total, status:'open', createdAt:getCurrentDateTime() }); saveUserCoins(); saveGlobalData(); updateUI(); switchToPage('feed'); showToast(`Request posted, cost ${total} coins`); }
-    function fulfillRequest(reqId) { const req = requestsList.find(r=>r.id===reqId && r.status==='open'); if(!req) return; const fakeReport = { id:nextReportId++, location:req.location+" (response)", description:`📸 Fulfilled: ${req.details}`, mediaData:null, mediaType:'image', isPaid:false, priceCoins:0, timestamp:Date.now(), dateTimeStr:getCurrentDateTime(), geo:"Live response", author:currentUser.username, unlockCount:0, earnedCoins:0, likes:0, views:0 }; reports.unshift(fakeReport); const idx = requestsList.findIndex(r=>r.id===reqId); requestsList[idx].status='fulfilled'; currentUser.coins += req.reward; saveUserCoins(); saveGlobalData(); updateUI(); showToast(`✅ Fulfilled! +${req.reward} coins`); }
-    function clearAllReports() { if(currentUser.role==='admin') { reports = []; saveGlobalData(); updateUI(); showToast("All reports cleared"); } else showToast("Admin only"); }
-    
-    // Rendering feed & UI
-    function renderFeed() {
-        const feedDiv = document.getElementById('feedList'); const filtered = reports.filter(r=>isWithin3Hours(r.timestamp)).sort((a,b)=>b.timestamp-a.timestamp);
-        if(filtered.length===0) { feedDiv.innerHTML='<div class="report-card" style="text-align:center;">📍 No fresh reports in 3h. Be the first!</div>'; return; }
-        let html = '';
-        filtered.forEach(r=> { r.views = (r.views||0)+1; 
-            let mediaHtml = r.mediaData ? (r.mediaType==='image' ? `<div class="media-preview-small"><img src="${r.mediaData}"></div>` : `<div class="media-preview-small"><video controls src="${r.mediaData}"></video></div>`) : `<div class="media-preview-small" style="background:#e2e8f0; padding:20px; text-align:center;"><i class="fas fa-image"></i></div>`;
-            const badge = r.isPaid ? `<span class="badge-paid">🔒 ${r.priceCoins} coins</span>` : `<span class="badge-free">Free</span>`;
-            let action = r.isPaid ? `<button class="unlock-btn" data-unlock="${r.id}">Unlock · ${r.priceCoins} coins</button>` : '';
-            const likeBtn = `<button class="like-btn" data-like="${r.id}"><i class="fas fa-heart"></i> ${r.likes||0}</button>`;
-            const deleteBtn = (r.author===currentUser.username || currentUser.role==='admin') ? `<button class="delete-report" data-delete="${r.id}" style="background:#fee2e2; border:none; padding:4px 10px; border-radius:20px;"><i class="fas fa-trash"></i></button>` : '';
-            html += `<div class="report-card"><div class="report-location"><strong><i class="fas fa-map-pin"></i> ${escapeHtml(r.location)}</strong><div>${badge} ${deleteBtn}</div></div><div class="report-desc">${escapeHtml(r.description)}</div><div class="report-meta"><span class="gps-badge"><i class="fas fa-satellite-dish"></i> ${escapeHtml(r.geo)}</span></div>${mediaHtml}<div class="report-meta"><span><i class="far fa-clock"></i> ${r.dateTimeStr}</span><span><i class="fas fa-user"></i> ${escapeHtml(r.author)}</span><span><i class="fas fa-eye"></i> ${r.views||0}</span>${likeBtn}${action}</div></div>`;
-        });
-        feedDiv.innerHTML = html;
-        // requests in feed
-        const openReqs = requestsList.filter(r=>r.status==='open');
-        const reqContainer = document.getElementById('openRequestsFeedSection');
-        if(openReqs.length) { let reqHtml = `<div class="section-title">🎯 Open bounties</div>`; openReqs.forEach(req=>{ reqHtml+=`<div class="report-card request-card"><div><strong>${escapeHtml(req.location)}</strong><span class="badge-paid">Reward: ${req.reward} coins</span></div><div>${escapeHtml(req.details)}</div><button class="unlock-btn" data-fulfill="${req.id}">Fulfill +${req.reward} coins</button></div>`; }); reqContainer.innerHTML = reqHtml; } else reqContainer.innerHTML='';
-        attachDynamicEvents();
-    }
-    function attachDynamicEvents() { document.querySelectorAll('[data-unlock]').forEach(b=>b.addEventListener('click',e=>unlockReport(parseInt(b.dataset.unlock)))); document.querySelectorAll('[data-like]').forEach(b=>b.addEventListener('click',e=>toggleLike(parseInt(b.dataset.like)))); document.querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',e=>deleteReport(parseInt(b.dataset.delete)))); document.querySelectorAll('[data-fulfill]').forEach(b=>b.addEventListener('click',e=>fulfillRequest(parseInt(b.dataset.fulfill)))); }
-    function renderMyRequests() { const container = document.getElementById('userRequestsList'); const my = requestsList.filter(r=>r.requester===currentUser.username); if(!my.length) { container.innerHTML='<div class="report-card">No requests yet</div>'; return; } container.innerHTML = my.map(r=>`<div class="report-card"><strong>${escapeHtml(r.location)}</strong> <span class="badge-paid">${r.status}</span><div>${escapeHtml(r.details)}</div><div>Reward: ${r.reward} coins</div></div>`).join(''); }
-    function updateUI() { document.getElementById('walletBalance').innerText = currentUser.coins; document.getElementById('reportsToday').innerText = reports.filter(r=>new Date(r.timestamp).toDateString()===new Date().toDateString()).length; document.getElementById('openRequestsCount').innerText = requestsList.filter(r=>r.status==='open').length; document.getElementById('paidOut').innerText = reports.reduce((s,r)=>s+(r.earnedCoins||0),0); renderFeed(); renderMyRequests(); if(currentUser.role==='admin') document.getElementById('adminDashboard').style.display = 'block'; else document.getElementById('adminDashboard').style.display = 'none'; const adminOnlyElements = document.querySelectorAll('.admin-only'); adminOnlyElements.forEach(el=>{ if(currentUser.role==='admin') el.style.display='block'; else el.style.display='none'; }); updateUIBasedOnPermissions(); }
-    
-    // Login & Logout
-    function login(username, role) { currentUser.username = username; currentUser.role = role; loadUserCoins(); if(role==='admin') currentUser.coins = 999; saveUserCoins(); document.getElementById('loginOverlay').style.display = 'none'; document.getElementById('appContainer').style.display = 'flex'; document.getElementById('roleText').innerText = role === 'admin' ? '👑 Admin Mode' : `👤 User: ${username}`; updateUI(); }
-    function logout() { document.getElementById('loginOverlay').style.display = 'flex'; document.getElementById('appContainer').style.display = 'none'; currentUser = null; }
-    
-    // Media upload
-    function setupMedia() { const area = document.getElementById('mediaUploadArea'); const input = document.getElementById('uploadMedia'); const preview = document.getElementById('uploadPreview'); area.addEventListener('click',()=>input.click()); input.addEventListener('change',(e)=>{ const file=e.target.files[0]; if(!file) return; selectedFileType = file.type.startsWith('image/')?'image':'video'; const reader = new FileReader(); reader.onload = ev=>{ selectedFileData=ev.target.result; preview.style.display='block'; preview.innerHTML = selectedFileType==='image'? `<img src="${selectedFileData}" style="width:100%; border-radius:20px;">` : `<video controls src="${selectedFileData}" style="width:100%; border-radius:20px;"></video>`; }; reader.readAsDataURL(file); }); }
-    
-    function initApp() { loadGlobalData(); setupMedia(); document.getElementById('publishBtn').addEventListener('click',publishReport); document.getElementById('createReqBtn').addEventListener('click',createRequest); document.getElementById('topUpBtn').addEventListener('click',()=>{ currentUser.coins+=50; saveUserCoins(); updateUI(); showToast("+50 coins"); }); document.getElementById('clearAllBtn').addEventListener('click',clearAllReports); document.querySelectorAll('.nav-item').forEach(btn=>btn.addEventListener('click',()=>switchToPage(btn.dataset.nav))); document.getElementById('globalLogoutBtn').addEventListener('click',logout); document.getElementById('adminAddCoinsBtn')?.addEventListener('click',adminAddCoinsToUser); document.getElementById('adminResetAllBtn')?.addEventListener('click',resetDemoData); document.getElementById('permUpload')?.addEventListener('change',applyPermissions); document.getElementById('permRequest')?.addEventListener('change',applyPermissions); document.getElementById('permUnlock')?.addEventListener('change',applyPermissions); document.getElementById('permLike')?.addEventListener('change',applyPermissions); }
-    function switchToPage(pageId) { document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page')); document.getElementById(pageId+'Page').classList.add('active-page'); document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active')); document.querySelector(`[data-nav="${pageId}"]`).classList.add('active'); if(pageId==='feed') renderFeed(); if(pageId==='requests') renderMyRequests(); }
-    
-    // Event listeners for login
-    document.getElementById('loginBtn').addEventListener('click',()=>{ const u = document.getElementById('loginUsername').value.trim(); const p = document.getElementById('loginPassword').value; if(u==='admin' && p==='admin123') login('admin','admin'); else showToast("Invalid admin credentials. Use admin/admin123"); });
-    document.getElementById('demoUserBtn').addEventListener('click',()=>{ const demoName = "user_"+Math.floor(Math.random()*1000); login(demoName,'user'); });
-    initApp();
-</script>
+    <div class="card">
+      <h3>Mobile Installation</h3>
+      <p>We come to your site islandwide.</p>
+    </div>
+
+    <div class="card">
+      <h3>Nett Price -- No GST</h3>
+      <p>5 Years Warranty!.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="background:#f5f5f5;">
+  <h2>Why Choose Us</h2>
+  <p>✔️ SPF Approved Installer</p>
+  <p>✔️ Fast Turnaround</p>
+  <p>✔️ Competitive Pricing</p>
+  <p>✔️ Trusted by Fleet Operators</p>
+</section>
+
+<section class="section">
+  <h2>Contact Us</h2>
+  <p>📞 +65 94232000</p>
+  <p>📍 Singapore</p>
+  <a href="#" class="btn">WhatsApp Us</a>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Virtue Quest. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
+<section id="quotation">
+
+<h2>Request Quotation & Booking</h2>
+
+<form id="quoteForm">
+
+<label>Company Name</label><br>
+<input type="text" id="company" required><br><br>
+
+<label>Contact Person</label><br>
+<input type="text" id="person" required><br><br>
+
+<label>Contact Number</label><br>
+<input type="text" id="phone" required><br><br>
+
+<label>Email Address</label><br>
+<input type="email" id="email"><br><br>
+
+<label>Vehicle Type</label><br>
+<select id="vehicle">
+<option>Lorry</option>
+<option>Truck</option>
+<option>Bus</option>
+<option>Van</option>
+<option>Others</option>
+</select><br><br>
+
+<label>Vehicle Plate Number</label><br>
+<input type="text" id="plate"><br><br>
+
+<label>Vehicle Weight Category</label><br>
+<select id="weight">
+<option>3,501kg - 5,000kg</option>
+<option>5,001kg - 12,000kg</option>
+<option>Above 12,000kg</option>
+</select><br><br>
+
+<label>Preferred Installation Date</label><br>
+<input type="date" id="bookingDate" required><br><br>
+
+<label>Additional Remarks</label><br>
+<textarea id="remarks" rows="5"></textarea><br><br>
+
+<button type="button" onclick="sendWhatsApp()">
+Submit via WhatsApp
+</button>
+
+</form>
+
+</section>
+
+<style>
+
+#quotation{
+background:white;
+padding:60px 10%;
+}
+
+#quotation form{
+max-width:700px;
+margin:auto;
+background:#f8f8f8;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+#quotation input,
+#quotation select,
+#quotation textarea{
+width:100%;
+padding:12px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:16px;
+}
+
+#quotation button{
+background:#25D366;
+color:white;
+padding:15px 30px;
+border:none;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+}
+
+#quotation button:hover{
+background:#1da851;
+}
+
+</style>
+
+<script>
+
+function sendWhatsApp(){
+
+let company = document.getElementById("company").value;
+let person = document.getElementById("person").value;
+let phone = document.getElementById("phone").value;
+let email = document.getElementById("email").value;
+let vehicle = document.getElementById("vehicle").value;
+let plate = document.getElementById("plate").value;
+let weight = document.getElementById("weight").value;
+let bookingDate = document.getElementById("bookingDate").value;
+let remarks = document.getElementById("remarks").value;
+
+let message =
+`SPF Speed Limiter Installation Booking
+
+Company Name: ${company}
+
+Contact Person: ${person}
+
+Phone Number: ${phone}
+
+Email: ${email}
+
+Vehicle Type: ${vehicle}
+
+Vehicle Plate: ${plate}
+
+Weight Category: ${weight}
+
+Preferred Installation Date: ${bookingDate}
+
+Remarks:
+${remarks}`;
+
+let whatsappURL =
+"https://wa.me/6591234567?text=" + encodeURIComponent(message);
+
+window.open(whatsappURL, "_blank");
+
+}
+
+</script>
