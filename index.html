@@ -3,76 +3,395 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Virtue Quest- SPF Authorized Speed Limiter Installer - Your Heavy Vehicle Solutions</title>
+
+<title>SPF Approved Speed Limiter Installer Singapore | Virtue Quest</title>
+<meta name="description" content="Official SPF-authorised agent for commercial lorry & truck speed limiter installation (60km/h). Avoid S$10,000 fines & fix bizSAFE issues. Mobile on-site islandwide.">
+<meta name="keywords" content="spf authorized speed limiter installer, speed limiter installation singapore, lorry speed limiter, lta compliance truck workshop, 60kmh speed limiter installer">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: var(--sky-green);
-}
+  :root {
+    --primary-color: #0a1f44;
+    --accent-color: #ff6600;
+    --text-color: #333333;
+    --sky-blue: #e2f0d9; /* Changed from sky blue to Light Green Base */
+    --light-bg: #f2f8ee; /* Changed to lighter tint of green for section alternation */
+    --whatsapp-color: #25D366;
+    --whatsapp-hover: #1da851;
+    --alert-color: #d9534f;
+    --dark-green: #2e7d32;
+  }
 
-header {
-  background: #0a1f44;
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-header h1 {
-  margin: 0;
-}
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--sky-blue); 
+  }
 
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
+  /* Header & Navigation */
+  header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
 
-.hero {
-  background: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') no-repeat center/cover;
-  color: white;
-  padding: 100px 30px;
-  text-align: center;
-}
+  header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
 
-.hero h2 {
-  font-size: 40px;
-}
+  nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
 
-.btn {
-  background: #ff6600;
-  color: white;
-  padding: 12px 20px;
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-}
+  nav a:hover {
+    color: var(--accent-color);
+  }
 
-.section {
-  padding: 50px 30px;
-  text-align: center;
-}
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(rgba(10, 31, 68, 0.85), rgba(10, 31, 68, 0.85)), 
+                url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') no-repeat center/cover;
+    color: white;
+    padding: 120px 10%;
+    text-align: center;
+  }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
+  .hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
 
-.card {
-  border: 1px solid #ddd;
-  padding: 20px;
-}
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
 
-.footer {
-  background: #0a1f44;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+  /* Regulatory Warning Bar with 1s Flash Animation */
+  .alert-bar {
+    background-color: var(--alert-color);
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    animation: flash-animation 1s infinite alternate;
+  }
+
+  @keyframes flash-animation {
+    0% {
+      background-color: var(--alert-color);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    }
+    100% {
+      background-color: #b52b27;
+      box-shadow: 0 4px 15px rgba(217, 83, 79, 0.6);
+    }
+  }
+
+  /* Compliance Image Container Elements */
+  .hero-image-container {
+    margin: 20px auto 30px auto;
+    max-width: 550px;
+    width: 100%;
+  }
+
+  .hero-compliance-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+  }
+
+  /* Universal Buttons */
+  .btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 14px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn:hover {
+    background: #e05500;
+    transform: translateY(-2px);
+  }
+
+  /* Section Layouts with Auto-Sizing Text Underlines */
+  .section {
+    padding: 80px 10%;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block; 
+  }
+
+  .section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    width: 100%; 
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  }
+
+  /* Grid Layout for Cards */
+  .services, .specs-grid, .grant-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #c8e1ba;
+    padding: 35px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(10, 31, 68, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(10, 31, 68, 0.12);
+  }
+
+  .card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .card p {
+    color: #444;
+    font-size: 15px;
+  }
+
+  /* Document Section Layout */
+  .document-container {
+    max-width: 850px;
+    margin: 30px auto 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px dashed var(--dark-green);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .document-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .document-info p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  /* Regulatory Timeline Table styling */
+  .compliance-table-container {
+    max-width: 850px;
+    margin: 20px auto 40px auto;
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(10, 31, 68, 0.1);
+    border-radius: 8px;
+  }
+
+  .compliance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .compliance-table th, .compliance-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #eef2f5;
+  }
+
+  .compliance-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+  }
+
+  .compliance-table tr:hover {
+    background-color: #f1f5f9;
+  }
+
+  /* Trust Indicators Section */
+  .why-choose-us {
+    background: var(--light-bg); 
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .benefit-item {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* Forms styling (Booking & Referral) */
+  #quotation, #referral {
+    background: var(--sky-blue);
+  }
+
+  .custom-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(10, 31, 68, 0.15);
+    text-align: left;
+  }
+
+  .custom-form label {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .custom-form input,
+  .custom-form select,
+  .custom-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: 1px solid #b1cca4;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    background-color: #fdfefe;
+  }
+
+  .custom-form input:focus,
+  .custom-form select:focus,
+  .custom-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+  }
+
+  .custom-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--whatsapp-color);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .custom-form button:hover {
+    background: var(--whatsapp-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Contact Details Section */
+  .contact-info {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-info p {
+    margin: 15px 0;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    border-top: 3px solid var(--accent-color);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      padding: 15px;
+    }
+    nav {
+      margin-top: 15px;
+    }
+    nav a {
+      margin: 0 10px;
+    }
+    .hero h2 {
+      font-size: 32px;
+    }
+    .custom-form {
+      padding: 25px;
+    }
+    .document-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  }
 </style>
 </head>
 
@@ -82,200 +401,337 @@ nav a {
   <h1>Virtue Quest</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <a href="#deadlines">TP Mandate Deadlines</a>
+    <a href="#specs">Specifications</a>
+    <a href="#psg">PSG Guide</a>
+    <a href="#quotation">Book Installation</a>
+    <a href="#referral">Earn Rewards</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Efficient and Reliable Mobile On Site Installation</h2>
-  <p>SPF-Approved Speed Limiter Installation & Fleet Services</p>
-  <a href="#" class="btn">Get a Quote</a>
+  <h2>Official SPF-Authorized Speed Limiter Installer</h2>
+  <p>Protect Your Fleet Compliance & Secure Your Road Tax Renewals Instantly</p>
+  <div class="alert-bar">🚨 WARNING: Non-compliance faces Traffic Police fines up to S$10,000 & bizSAFE suspension!</div>
+  
+  <div class="hero-image-container">
+    <img src="./Speed_limiter.jpg" alt="SPF approved speed limiter installation for commercial heavy vehicles in Singapore" class="hero-compliance-img">
+  </div>
+
+  <br>
+  <a href="#quotation" class="btn">Get a Quote / Book Now</a>
 </section>
 
-<section class="section">
-  <h2>Our Services</h2>
-  <div class="services">
-
-    <div class="card">
-      <h3>Speed Limiter Installation</h3>
-      <p>Certified installation compliant with regulations.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fleet Maintenance</h3>
-      <p>Reliable servicing for commercial vehicles.</p>
-    </div>
-
-    <div class="card">
-      <h3>Mobile Installation</h3>
-      <p>We come to your site islandwide.</p>
-    </div>
-
-    <div class="card">
-      <h3>Nett Price -- No GST</h3>
-      <p>5 Years Warranty!.</p>
-    </div>
-
+<section class="section" id="deadlines">
+  <h2>Traffic Police Statutory Enforcement Deadlines</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <p style="max-width:800px; margin: 0 auto 30px auto; color:#222; font-weight: 500;">
+    The Singapore Police Force (SPF) requires all diesel, petrol, and electric lorries with a Maximum Laden Weight (MLW) between 3,501kg and 12,000kg to be retrofitted with a speed limiter restricted to 60km/h. Check your specific timeline below:
+  </p>
+  
+  <div class="compliance-table-container">
+    <table class="compliance-table">
+      <thead>
+        <tr>
+          <th>Lorry Registration Date</th>
+          <th>Maximum Laden Weight (MLW)</th>
+          <th>Enforcement Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Registered <strong>Before</strong> 1 Jan 2018</td>
+          <td>5,001kg – 12,000kg</td>
+          <td style="color:var(--alert-color); font-weight:bold;">Passed (1 Jan 2026)</td>
+        </tr>
+        <tr>
+          <td>Registered <strong>Before</strong> 1 Jan 2018</td>
+          <td>3,501kg – 5,000kg (e.g. 10ft/14ft)</td>
+          <td style="color:var(--accent-color); font-weight:bold;">1 July 2026 (Upcoming)</td>
+        </tr>
+        <tr>
+          <td>Registered <strong>On/After</strong> 1 Jan 2018</td>
+          <td>5,001kg – 12,000kg</td>
+          <td>1 January 2027</td>
+        </tr>
+        <tr>
+          <td>Registered <strong>On/After</strong> 1 Jan 2018</td>
+          <td>3,501kg – 5,000kg</td>
+          <td>1 July 2027</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section" style="background:#f5f5f5;">
-  <h2>Why Choose Us</h2>
-  <p>✔️ SPF Approved Installer</p>
-  <p>✔️ Fast Turnaround</p>
-  <p>✔️ Competitive Pricing</p>
-  <p>✔️ Trusted by Fleet Operators</p>
+<section class="section" id="specs" style="background-color: var(--light-bg); display: block;">
+  <h2>Hardware Technical Specifications</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <p style="max-width:800px; margin: 0 auto 30px auto; color:#444;">
+    Our speed limiters are engineered in strict compliance with the **Revised Electronic Speed Limiter Standards** set by the Land Transport Authority (LTA) and Singapore Police Force.
+  </p>
+  <div class="specs-grid">
+    <div class="card">
+      <h3>Operational Precision</h3>
+      <p>Precision calibrated at exactly 60km/h with a strict accuracy envelope of ±2%, mitigating any risk of inadvertent terminal velocity breaches.</p>
+    </div>
+    <div class="card">
+      <h3>Electrical Profiles</h3>
+      <p>Built with wide-input dynamic power configurations supporting stable 12V to 24V DC systems. Includes comprehensive reverse polarity protection.</p>
+    </div>
+    <div class="card">
+      <h3>Tamper-Evident Architecture</h3>
+      <p>Features structural chassis lead sealing coupled with an active safety failsafe mechanism. System automatically triggers log alerts upon harness interruption.</p>
+    </div>
+    <div class="card">
+      <h3>Industrial Resilience</h3>
+      <p>IP67 ruggedized structural housing resilient to harsh engine heat cycles, localized engine oil exposures, and continuous vibration stress profiles.</p>
+    </div>
+    <div class="card">
+      <h3>Speed Limiter Specfication</h3>
+       <p>View the SPF approved Speed Limiter Specification.</p>
+      <a href="./SPF_Speed_limiter_Specs.pdf" target="_blank" class="btn" style="padding: 10px 20px; font-size: 14px; background: var(--primary-color);">View & Download Specs (PDF)</a>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Contact Us</h2>
-  <p>📞 +65 94232000</p>
-  <p>📍 Singapore</p>
-  <a href="#" class="btn">WhatsApp Us</a>
+<section class="section" id="psg" style="background-color: #ffffff; display: block;">
+  <h2>PSG Grant Application & Authorized Installer Status</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  
+  <p style="max-width:800px; margin: 0 auto 30px auto; color:#444; font-weight: 500;">
+    Claim up to **50% funding support** through the Productivity Solutions Grant (PSG) for eligible commercial assets. Follow our direct blueprint submission sequence:
+  </p>
+
+  <div class="grant-steps">
+    <div class="card">
+      <h3>Step 1: Secure Quote</h3>
+      <p>Submit your enterprise fleet specifics using our digital booking form below to secure your official, grant-compliant Virtue Quest itemized quotation.</p>
+    </div>
+    <div class="card">
+      <h3>Step 2: Access BGP</h3>
+      <p>Authenticate into the official **Business Grants Portal (BGP)** utilizing your corporate CorpPass token to initiate your funding application.</p>
+    </div>
+    <div class="card">
+      <h3>Step 3: Portal Uploads</h3>
+      <p>Navigate to 'Development' or select 'Productivity Solutions' and upload our official quote. Ensure submission is completed **before** physical hardware integration.</p>
+    </div>
+    <div class="card">
+      <h3>Step 4: Claim Processing</h3>
+      <p>Upon installation and testing clearance, submit your workshop receipt documents inside BGP to execute direct bank disbursement processes.</p>
+    </div>
+    <div class="card">
+      <h3>View: PGS Grant Application Guide</h3>
+      <p>View and Follow the step to apply for PSG grant if needed. Installation can start once PSG grant application is submitted.</p>
+      <a href="./PSG_Grant_Application.pdf" target="_blank" class="btn" style="padding: 10px 20px; font-size: 14px; background: var(--primary-color);">View & Download PSG Guide (PDF)</a>
+    </div>
+
+  </div>
+
+  <div class="document-container">
+    <div class="document-info">
+      <h3>Official Traffic Police Authorization Proof</h3>
+      <p>Verify our authorized status instantly. Check the official Singapore Police Force (SPF) statutory list highlighting **Virtue Quest** as an active licensed installation partner.</p>
+      <a href="./Virtue_Quest_SPF_Authorized_Certificate.pdf" target="_blank" class="btn" style="padding: 10px 20px; font-size: 14px; background: var(--primary-color);">View & Download Certificate (PDF)</a>
+    </div>
+    <div style="font-size: 60px; color: var(--dark-green); padding: 0 20px;">🛡️</div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background-color: var(--light-bg); display: block;">
+  <h2>Our Services</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <div class="services">
+    <div class="card">
+      <h3>Speed Limiter Installation</h3>
+      <p>Certified 60km/h calibration and official tamper-proof sealing by an SPF Authorized Agent.</p>
+    </div>
+    <div class="card">
+      <h3>No Void in Vehicle Warranty</h3>
+      <p>Advanced plug-and-play connections. Absolutely no cutting of factory wiring harnesses.</p>
+    </div>
+    <div class="card">
+      <h3>On-Site Mobile Teams</h3>
+      <p>Convenient, rapid deployments right at your yard or company location islandwide to reduce fleet downtime.</p>
+    </div>
+    <div class="card">
+      <h3>Transparent Pricing</h3>
+      <p>Nett price structure with absolute clarity. No GST. Backed fully by our comprehensive 5-year hardware warranty.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section why-choose-us" style="display: block;">
+  <h2>Why Choose Virtue Quest</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <div class="benefits-grid">
+    <div class="benefit-item">✔️ Official SPF Approved Installer</div>
+    <div class="benefit-item">✔️ 30-Min Fast Turnaround</div>
+    <div class="benefit-item">✔️ Passes LTA/bizSAFE Risk Audits</div>
+    <div class="benefit-item">✔️ Eligible for Up to 50% PSG Grants</div>
+  </div>
+</section>
+
+<section class="section" id="quotation" style="display: block;">
+  <h2>Request Quotation & Fleet Booking</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <form id="quoteForm" class="custom-form">
+    <label for="company">Company Name</label>
+    <input type="text" id="company" placeholder="e.g. Logistics Pte Ltd" required>
+
+    <label for="address">Company Address / Fleet Location</label>
+    <input type="text" id="address" placeholder="e.g. 12 Tuas South Ave..." required>
+
+    <label for="person">Contact Person</label>
+    <input type="text" id="person" required>
+
+    <label for="phone">Contact Number (Mobile)</label>
+    <input type="text" id="phone" placeholder="e.g. 91234567" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email">
+
+    <label for="vehicle">Lorry Brand / Model</label>
+    <select id="vehicle">
+      <option>ISUZU (e.g. NPR / NQR)</option>
+      <option>TOYOTA (e.g. Dyna)</option>
+      <option>HINO (e.g. 300 / 500)</option>
+      <option>MITSUBISHI FUSO (e.g. Canter)</option>
+      <option>NISSAN CABSTAR</option>
+      <option>Others</option>
+    </select>
+
+    <label for="plate">Vehicle Plate Number(s)</label>
+    <input type="text" id="plate" placeholder="e.g. GBF1234A, GBA5678Z (Separate with commas)">
+
+    <label for="bookingDate">Preferred On-Site Installation Date</label>
+    <input type="date" id="bookingDate" required>
+
+    <label for="remarks">Additional Remarks (e.g., Number of trucks, specific deadline issues)</label>
+    <textarea id="remarks" rows="5" placeholder="Let us know if you need urgent support or bulk pricing..."></textarea>
+
+    <button type="button" onclick="sendWhatsApp()">
+      Submit via WhatsApp
+    </button>
+  </form>
+</section>
+
+<section class="section" id="referral" style="background-color: var(--light-bg); display: block;">
+  <h2>Earn Cash Rewards: Register As A Referrer</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <p style="max-width:700px; margin: 0 auto 35px auto; color:#333; font-weight: 500; font-size: 17px;">
+    💰 Know fleet managers, lorry owners, or logistics operators scrambling to meet the TP deadlines? Refer them to Virtue Quest and **earn up to S$30** for every successful vehicle installation! No payout ceilings.
+  </p>
+  
+  <form id="referralForm" class="custom-form">
+    <label for="refName">Your Full Name</label>
+    <input type="text" id="refName" placeholder="e.g. John Tan" required>
+
+    <label for="refContact">Your Mobile Number (For PayNow Transfer)</label>
+    <input type="text" id="refContact" placeholder="e.g. 98765432" required>
+
+    <label for="refEmail">Your Email Address</label>
+    <input type="email" id="refEmail" placeholder="e.g. john@gmail.com">
+
+    <label for="leadCompany">Referred Company Name</label>
+    <input type="text" id="leadCompany" placeholder="e.g. Target Logistics Company" required>
+
+    <label for="leadContactName">Company Contact Person</label>
+    <input type="text" id="leadContactName" placeholder="e.g. Mr. Lim (Fleet Manager)" required>
+
+    <label for="leadPhone">Company Mobile Number</label>
+    <input type="text" id="leadPhone" placeholder="e.g. 91112222" required>
+
+    <label for="leadDetails">Estimated Number of Vehicles / Specific Remarks</label>
+    <textarea id="leadDetails" rows="4" placeholder="e.g. Has 5 units of Isuzu 10ft trucks needing installation before July deadline."></textarea>
+
+    <button type="button" onclick="sendReferralWhatsApp()" style="background: var(--primary-color);">
+      Submit Lead via WhatsApp & Secure Reward
+    </button>
+  </form>
+</section>
+
+<section class="section" id="contact" style="background-color: var(--light-bg); display: block;">
+  <h2>Contact Our Operations Hotline</h2>
+  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
+  <div class="contact-info">
+    <p>📞 <strong>Phone:</strong> +65 94232000</p>
+    <p>📍 <strong>Location:</strong> Singapore Islandwide On-Site Fleet Deployments</p>
+  </div>
+  <a href="https://wa.me/6594232000" target="_blank" class="btn" style="background: var(--whatsapp-color);">Chat Instantly via WhatsApp</a>
 </section>
 
 <footer class="footer">
-  <p>© 2026 Virtue Quest. All rights reserved.</p>
+  <p>© 2026 Virtue Quest. Official Singapore Traffic Police Speed Limiter Authorized Agent. All rights reserved.</p>
 </footer>
+
+<script>
+function sendWhatsApp(){
+  let company = document.getElementById("company").value;
+  let address = document.getElementById("address").value;
+  let person = document.getElementById("person").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let vehicle = document.getElementById("vehicle").value;
+  let plate = document.getElementById("plate").value;
+  let bookingDate = document.getElementById("bookingDate").value;
+  let remarks = document.getElementById("remarks").value;
+
+  if(!company || !address || !person || !phone || !bookingDate){
+    alert("Please fill in all required fields to submit your registration request.");
+    return;
+  }
+
+  let message =
+`🚨 SPF Speed Limiter Installation Booking Request
+
+🏢 Company Name: ${company}
+📍 Fleet Address: ${address}
+👤 Contact Person: ${person}
+📱 Phone Number: ${phone}
+📧 Email: ${email || 'N/A'}
+🚚 Vehicle Type: ${vehicle}
+🔢 Vehicle Plate(s): ${plate || 'N/A'}
+📅 Preferred Date: ${bookingDate}
+
+💬 Remarks/Fleet Volume:
+${remarks || 'No additional remarks.'}`;
+
+  let whatsappURL = "https://wa.me/6594232000?text=" + encodeURIComponent(message);
+  window.open(whatsappURL, "_blank");
+}
+
+function sendReferralWhatsApp(){
+  let refName = document.getElementById("refName").value;
+  let refContact = document.getElementById("refContact").value;
+  let refEmail = document.getElementById("refEmail").value;
+  let leadCompany = document.getElementById("leadCompany").value;
+  let leadContactName = document.getElementById("leadContactName").value;
+  let leadPhone = document.getElementById("leadPhone").value;
+  let leadDetails = document.getElementById("leadDetails").value;
+
+  if(!refName || !refContact || !leadCompany || !leadContactName || !leadPhone){
+    alert("Please complete all required fields to submit a referral partner application.");
+    return;
+  }
+
+  let refMessage = 
+`🤝 NEW SPEED LIMITER REFERRAL PARTNER SUBMISSION
+
+👤 Referrer Name: ${refName}
+📱 Referrer PayNow Phone: ${refContact}
+📧 Referrer Email: ${refEmail || 'N/A'}
+
+🏢 Referred Client Business: ${leadCompany}
+👤 Client Contact Person: ${leadContactName}
+📞 Client Mobile Number: ${leadPhone}
+📝 Fleet Volume / Context: 
+${leadDetails || 'No additional lead specs provided.'}`;
+
+  let referralURL = "https://wa.me/6594232000?text=" + encodeURIComponent(refMessage);
+  window.open(referralURL, "_blank");
+}
+</script>
 
 </body>
 </html>
-<section id="quotation">
-
-<h2>Request Quotation & Booking</h2>
-
-<form id="quoteForm">
-
-<label>Company Name</label><br>
-<input type="text" id="company" required><br><br>
-
-<label>Contact Person</label><br>
-<input type="text" id="person" required><br><br>
-
-<label>Contact Number</label><br>
-<input type="text" id="phone" required><br><br>
-
-<label>Email Address</label><br>
-<input type="email" id="email"><br><br>
-
-<label>Vehicle Type</label><br>
-<select id="vehicle">
-<option>Lorry</option>
-<option>Truck</option>
-<option>Bus</option>
-<option>Van</option>
-<option>Others</option>
-</select><br><br>
-
-<label>Vehicle Plate Number</label><br>
-<input type="text" id="plate"><br><br>
-
-<label>Vehicle Weight Category</label><br>
-<select id="weight">
-<option>3,501kg - 5,000kg</option>
-<option>5,001kg - 12,000kg</option>
-<option>Above 12,000kg</option>
-</select><br><br>
-
-<label>Preferred Installation Date</label><br>
-<input type="date" id="bookingDate" required><br><br>
-
-<label>Additional Remarks</label><br>
-<textarea id="remarks" rows="5"></textarea><br><br>
-
-<button type="button" onclick="sendWhatsApp()">
-Submit via WhatsApp
-</button>
-
-</form>
-
-</section>
-
-<style>
-
-#quotation{
-background:white;
-padding:60px 10%;
-}
-
-#quotation form{
-max-width:700px;
-margin:auto;
-background:#f8f8f8;
-padding:30px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-#quotation input,
-#quotation select,
-#quotation textarea{
-width:100%;
-padding:12px;
-margin-top:5px;
-border:1px solid #ccc;
-border-radius:5px;
-font-size:16px;
-}
-
-#quotation button{
-background:#25D366;
-color:white;
-padding:15px 30px;
-border:none;
-border-radius:5px;
-font-size:18px;
-cursor:pointer;
-}
-
-#quotation button:hover{
-background:#1da851;
-}
-
-</style>
-
-<script>
-
-function sendWhatsApp(){
-
-let company = document.getElementById("company").value;
-let person = document.getElementById("person").value;
-let phone = document.getElementById("phone").value;
-let email = document.getElementById("email").value;
-let vehicle = document.getElementById("vehicle").value;
-let plate = document.getElementById("plate").value;
-let weight = document.getElementById("weight").value;
-let bookingDate = document.getElementById("bookingDate").value;
-let remarks = document.getElementById("remarks").value;
-
-let message =
-`SPF Speed Limiter Installation Booking
-
-Company Name: ${company}
-
-Contact Person: ${person}
-
-Phone Number: ${phone}
-
-Email: ${email}
-
-Vehicle Type: ${vehicle}
-
-Vehicle Plate: ${plate}
-
-Weight Category: ${weight}
-
-Preferred Installation Date: ${bookingDate}
-
-Remarks:
-${remarks}`;
-
-let whatsappURL =
-"https://wa.me/6591234567?text=" + encodeURIComponent(message);
-
-window.open(whatsappURL, "_blank");
-
-}
-
-</script>
