@@ -1,737 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SPF Approved Speed Limiter Installer Singapore | Virtue Quest</title>
-<meta name="description" content="Official SPF-authorised agent for commercial lorry & truck speed limiter installation (60km/h). Avoid S$10,000 fines & fix bizSAFE issues. Mobile on-site islandwide.">
-<meta name="keywords" content="spf authorized speed limiter installer, speed limiter installation singapore, lorry speed limiter, lta compliance truck workshop, 60kmh speed limiter installer">
-
-<style>
-  :root {
-    --primary-color: #0a1f44;
-    --accent-color: #ff6600;
-    --text-color: #333333;
-    --sky-blue: #e2f0d9; /* Changed from sky blue to Light Green Base */
-    --light-bg: #f2f8ee; /* Changed to lighter tint of green for section alternation */
-    --whatsapp-color: #25D366;
-    --whatsapp-hover: #1da851;
-    --alert-color: #d9534f;
-    --dark-green: #2e7d32;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--sky-blue); 
-  }
-
-  /* Header & Navigation */
-  header {
-    background: var(--primary-color);
-    color: white;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  }
-
-  nav a {
-    color: white;
-    margin-left: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  nav a:hover {
-    color: var(--accent-color);
-  }
-
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(rgba(10, 31, 68, 0.85), rgba(10, 31, 68, 0.85)), 
-                url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') no-repeat center/cover;
-    color: white;
-    padding: 120px 10%;
-    text-align: center;
-  }
-
-  .hero h2 {
-    font-size: 42px;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-
-  .hero p {
-    font-size: 20px;
-    margin-bottom: 25px;
-    opacity: 0.9;
-  }
-
-  /* Regulatory Warning Bar with 1s Flash Animation */
-  .alert-bar {
-    background-color: var(--alert-color);
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    animation: flash-animation 1s infinite alternate;
-  }
-
-  @keyframes flash-animation {
-    0% {
-      background-color: var(--alert-color);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    }
-    100% {
-      background-color: #b52b27;
-      box-shadow: 0 4px 15px rgba(217, 83, 79, 0.6);
-    }
-  }
-
-  /* Compliance Image Container Elements */
-  .hero-image-container {
-    margin: 20px auto 30px auto;
-    max-width: 550px;
-    width: 100%;
-  }
-
-  .hero-compliance-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.25);
-  }
-
-  /* Universal Buttons */
-  .btn {
-    background: var(--accent-color);
-    color: white;
-    padding: 14px 30px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .btn:hover {
-    background: #e05500;
-    transform: translateY(-2px);
-  }
-
-  /* Section Layouts with Auto-Sizing Text Underlines */
-  .section {
-    padding: 80px 10%;
-    text-align: center;
-  }
-
-  .section h2 {
-    font-size: 32px;
-    color: var(--primary-color);
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 15px;
-    display: inline-block; 
-  }
-
-  .section h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0; 
-    width: 100%; 
-    height: 4px;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-  }
-
-  /* Grid Layout for Cards */
-  .services, .specs-grid, .grant-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-  }
-
-  .card {
-    background: white;
-    border: 1px solid #c8e1ba;
-    padding: 35px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(10, 31, 68, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(10, 31, 68, 0.12);
-  }
-
-  .card h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .card p {
-    color: #444;
-    font-size: 15px;
-  }
-
-  /* Document Section Layout */
-  .document-container {
-    max-width: 850px;
-    margin: 30px auto 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    border: 2px dashed var(--dark-green);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  }
-
-  .document-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-  }
-
-  .document-info p {
-    font-size: 15px;
-    color: #555;
-    margin-bottom: 15px;
-  }
-
-  /* Regulatory Timeline Table styling */
-  .compliance-table-container {
-    max-width: 850px;
-    margin: 20px auto 40px auto;
-    overflow-x: auto;
-    box-shadow: 0 4px 12px rgba(10, 31, 68, 0.1);
-    border-radius: 8px;
-  }
-
-  .compliance-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    text-align: left;
-    font-size: 15px;
-  }
-
-  .compliance-table th, .compliance-table td {
-    padding: 14px 20px;
-    border-bottom: 1px solid #eef2f5;
-  }
-
-  .compliance-table th {
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: 600;
-  }
-
-  .compliance-table tr:hover {
-    background-color: #f1f5f9;
-  }
-
-  /* Trust Indicators Section */
-  .why-choose-us {
-    background: var(--light-bg); 
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .benefit-item {
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    color: var(--primary-color);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-
-  /* Forms styling (Booking & Referral) */
-  #quotation, #referral {
-    background: var(--sky-blue);
-  }
-
-  .custom-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background: white; 
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(10, 31, 68, 0.15);
-    text-align: left;
-  }
-
-  .custom-form label {
-    font-weight: 600;
-    color: var(--primary-color);
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .custom-form input,
-  .custom-form select,
-  .custom-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 25px;
-    border: 1px solid #b1cca4;
-    border-radius: 6px;
-    font-size: 16px;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-    background-color: #fdfefe;
-  }
-
-  .custom-form input:focus,
-  .custom-form select:focus,
-  .custom-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background-color: #ffffff;
-  }
-
-  .custom-form button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: var(--whatsapp-color);
-    color: white;
-    padding: 16px;
-    border: none;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .custom-form button:hover {
-    background: var(--whatsapp-hover);
-    transform: translateY(-1px);
-  }
-
-  /* Contact Details Section */
-  .contact-info {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .contact-info p {
-    margin: 15px 0;
-  }
-
-  /* Footer */
-  .footer {
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    border-top: 3px solid var(--accent-color);
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      padding: 15px;
-    }
-    nav {
-      margin-top: 15px;
-    }
-    nav a {
-      margin: 0 10px;
-    }
-    .hero h2 {
-      font-size: 32px;
-    }
-    .custom-form {
-      padding: 25px;
-    }
-    .document-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 20px;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The ThirdEye — Admin & User Modes | Location Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #eef2ff; color: #0f172a; }
+        .app-container { max-width: 500px; margin: 0 auto; background: white; min-height: 100vh; box-shadow: 0 0 40px rgba(0,0,0,0.08); display: flex; flex-direction: column; position: relative; }
+        .login-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+        .login-card { background: white; max-width: 340px; width: 90%; border-radius: 48px; padding: 32px 24px; text-align: center; box-shadow: 0 25px 50px -12px black; }
+        .login-card h2 { font-size: 28px; margin-bottom: 8px; background: linear-gradient(135deg, #0b2b26, #1e6f5c); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .login-card input { width: 100%; padding: 14px 16px; margin: 12px 0; border: 1px solid #e2e8f0; border-radius: 60px; font-size: 15px; }
+        .login-card button { width: 100%; padding: 14px; border-radius: 60px; font-weight: 700; border: none; margin-top: 8px; cursor: pointer; }
+        .btn-login { background: #1e6f5c; color: white; }
+        .btn-demo { background: #f1f5f9; color: #1e293b; margin-top: 8px; }
+        .role-badge { position: fixed; top: 12px; right: 20px; background: #1e293b; color: white; padding: 4px 14px; border-radius: 40px; font-size: 11px; font-weight: 600; z-index: 50; }
+        .status-bar { padding: 12px 20px 6px; font-size: 14px; font-weight: 500; display: flex; justify-content: space-between; border-bottom: 1px solid #eef2f8; }
+        .main-header { padding: 16px 20px 8px; }
+        .logo-area h1 { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #0b2b26, #1e6f5c); background-clip: text; -webkit-background-clip: text; color: transparent; letter-spacing: -0.3px; }
+        .logo-area p { font-size: 13px; color: #5b6e8c; }
+        .wallet-card { background: #0f2b3d; margin: 12px 20px 20px; border-radius: 28px; padding: 16px 20px; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .stats-row { display: flex; justify-content: space-between; padding: 8px 20px 20px; gap: 12px; border-bottom: 1px solid #edf2f7; }
+        .stat-item { background: #f8fafc; flex: 1; text-align: center; padding: 12px 4px; border-radius: 20px; }
+        .stat-number { font-size: 22px; font-weight: 800; color: #1e6f5c; }
+        .bottom-nav { background: white; border-top: 1px solid #eef2f8; display: flex; justify-content: space-around; padding: 8px 16px 14px; position: sticky; bottom: 0; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; font-size: 12px; font-weight: 500; color: #94a3b8; cursor: pointer; padding: 6px 12px; border-radius: 30px; }
+        .nav-item.active { color: #1e6f5c; background: #e6f7f2; }
+        .main-content { flex: 1; padding: 20px; overflow-y: auto; max-height: calc(100vh - 280px); }
+        .page { display: none; animation: fade 0.2s ease; }
+        .page.active-page { display: block; }
+        @keyframes fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: baseline; }
+        .report-card { background: #ffffff; border-radius: 24px; padding: 16px; margin-bottom: 14px; border: 1px solid #edf2f7; transition: 0.2s; }
+        .badge-free { background: #e0f2e9; color: #1e6f5c; padding: 4px 12px; border-radius: 40px; font-weight: 700; font-size: 12px; }
+        .badge-paid { background: #fee2e2; color: #b91c1c; padding: 4px 12px; border-radius: 40px; font-weight: 700; font-size: 12px; }
+        .unlock-btn { background: #1e6f5c; border: none; padding: 6px 16px; border-radius: 40px; color: white; font-weight: 600; font-size: 12px; cursor: pointer; }
+        .media-preview-small { margin-top: 10px; border-radius: 20px; overflow: hidden; background: #f1f5f9; max-height: 180px; }
+        .media-preview-small img, .media-preview-small video { width: 100%; max-height: 180px; object-fit: cover; }
+        .form-card { background: #ffffff; border-radius: 28px; padding: 20px; border: 1px solid #eef2f6; margin-bottom: 20px; }
+        input, textarea, select { width: 100%; padding: 14px 16px; border: 1px solid #e2e8f0; border-radius: 20px; font-family: 'Inter', sans-serif; font-size: 14px; }
+        .submit-btn { background: #0f2b3d; width: 100%; padding: 14px; border-radius: 40px; font-weight: 700; color: white; border: none; cursor: pointer; margin-top: 6px; }
+        .toast-msg { position: fixed; bottom: 80px; left: 20px; right: 20px; background: #1e293b; color: white; text-align: center; padding: 12px; border-radius: 60px; font-size: 13px; z-index: 200; }
+        .admin-panel { background: #fef9e3; border-left: 5px solid #eab308; border-radius: 24px; padding: 16px; margin-bottom: 20px; }
+        .admin-title { font-weight: 800; margin-bottom: 12px; color: #92400e; display: flex; align-items: center; gap: 8px; }
+        .admin-grid { display: flex; flex-direction: column; gap: 12px; }
+        .admin-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .admin-row input { flex: 1; padding: 10px 12px; font-size: 13px; }
+        .admin-btn { background: #eab308; border: none; padding: 10px 16px; border-radius: 40px; font-weight: 600; cursor: pointer; }
+        .danger-btn { background: #ef4444; color: white; }
+        .permission-toggle { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; background: #f1f5f9; padding: 10px 14px; border-radius: 60px; }
+        .gps-badge { background: #eef2ff; color: #1e40af; padding: 2px 8px; border-radius: 30px; font-size: 10px; font-family: monospace; }
+        .like-btn { background: none; border: none; color: #e11d48; cursor: pointer; margin-left: 8px; }
+        .logout-btn { background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 40px; font-size: 12px; margin-left: 12px; cursor: pointer; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; }
+        .restricted-msg { text-align: center; padding: 40px; color: #94a3b8; }
+        i.fa, i.far, i.fas { margin-right: 4px; }
+    </style>
 </head>
-
 <body>
+<div id="loginOverlay" class="login-overlay">
+    <div class="login-card">
+        <i class="fas fa-eye" style="font-size: 48px; color: #1e6f5c; margin-bottom: 12px;"></i>
+        <h2>The ThirdEye</h2>
+        <p style="margin-bottom: 20px; color: #5b6e8c;">First-hand location intelligence</p>
+        <input type="text" id="loginUsername" placeholder="Username" value="admin">
+        <input type="password" id="loginPassword" placeholder="Password" value="admin123">
+        <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login as Admin</button>
+        <button class="btn-demo" id="demoUserBtn"><i class="fas fa-user"></i> Quick Login as User (demo)</button>
+        <p style="font-size: 11px; margin-top: 16px;">Admin: admin / admin123 | User: any name (auto-create)</p>
+    </div>
+</div>
 
-<header>
-  <h1>Virtue Quest</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#deadlines">TP Mandate Deadlines</a>
-    <a href="#specs">Specifications</a>
-    <a href="#psg">PSG Guide</a>
-    <a href="#quotation">Book Installation</a>
-    <a href="#referral">Earn Rewards</a>
-  </nav>
-</header>
+<div class="app-container" id="appContainer" style="display: none;">
+    <div class="role-badge" id="roleBadge"><span id="roleText">User Mode</span> <button id="globalLogoutBtn" class="logout-btn" style="margin-left: 8px;"><i class="fas fa-sign-out-alt"></i> Logout</button></div>
+    <div class="status-bar"><span>9:41</span><span><i class="fas fa-signal"></i> <i class="fas fa-battery-full"></i></span></div>
+    <div class="main-header"><div class="logo-area"><h1><i class="fas fa-eye"></i> The ThirdEye</h1><p>Live GPS · Hyperlocal Intel</p></div></div>
 
-<section class="hero">
-  <h2>Official SPF-Authorized Speed Limiter Installer</h2>
-  <p>Protect Your Fleet Compliance & Secure Your Road Tax Renewals Instantly</p>
-  <div class="alert-bar">🚨 WARNING: Non-compliance faces Traffic Police fines up to S$10,000 & bizSAFE suspension!</div>
-  
-  <div class="hero-image-container">
-    <img src="./Speed_limiter.jpg" alt="SPF approved speed limiter installation for commercial heavy vehicles in Singapore" class="hero-compliance-img">
-  </div>
+    <div class="wallet-card"><div><div class="wallet-label">Your wallet</div><div class="wallet-coins"><span id="walletBalance">0</span> <small>coins</small></div></div><button class="add-coins-btn" id="topUpBtn" style="background:rgba(255,255,255,0.2); border:none; padding:8px 16px; border-radius:40px; color:white;">+ Add 50 coins</button></div>
 
-  <br>
-  <a href="#quotation" class="btn">Get a Quote / Book Now</a>
-</section>
-
-<section class="section" id="deadlines">
-  <h2>Traffic Police Statutory Enforcement Deadlines</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <p style="max-width:800px; margin: 0 auto 30px auto; color:#222; font-weight: 500;">
-    The Singapore Police Force (SPF) requires all diesel, petrol, and electric lorries with a Maximum Laden Weight (MLW) between 3,501kg and 12,000kg to be retrofitted with a speed limiter restricted to 60km/h. Check your specific timeline below:
-  </p>
-  
-  <div class="compliance-table-container">
-    <table class="compliance-table">
-      <thead>
-        <tr>
-          <th>Lorry Registration Date</th>
-          <th>Maximum Laden Weight (MLW)</th>
-          <th>Enforcement Deadline</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Registered <strong>Before</strong> 1 Jan 2018</td>
-          <td>5,001kg – 12,000kg</td>
-          <td style="color:var(--alert-color); font-weight:bold;">Passed (1 Jan 2026)</td>
-        </tr>
-        <tr>
-          <td>Registered <strong>Before</strong> 1 Jan 2018</td>
-          <td>3,501kg – 5,000kg (e.g. 10ft/14ft)</td>
-          <td style="color:var(--accent-color); font-weight:bold;">1 July 2026 (Upcoming)</td>
-        </tr>
-        <tr>
-          <td>Registered <strong>On/After</strong> 1 Jan 2018</td>
-          <td>5,001kg – 12,000kg</td>
-          <td>1 January 2027</td>
-        </tr>
-        <tr>
-          <td>Registered <strong>On/After</strong> 1 Jan 2018</td>
-          <td>3,501kg – 5,000kg</td>
-          <td>1 July 2027</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="section" id="specs" style="background-color: var(--light-bg); display: block;">
-  <h2>Hardware Technical Specifications</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <p style="max-width:800px; margin: 0 auto 30px auto; color:#444;">
-    Our speed limiters are engineered in strict compliance with the **Revised Electronic Speed Limiter Standards** set by the Land Transport Authority (LTA) and Singapore Police Force.
-  </p>
-  <div class="specs-grid">
-    <div class="card">
-      <h3>Operational Precision</h3>
-      <p>Precision calibrated at exactly 60km/h with a strict accuracy envelope of ±2%, mitigating any risk of inadvertent terminal velocity breaches.</p>
-    </div>
-    <div class="card">
-      <h3>Electrical Profiles</h3>
-      <p>Built with wide-input dynamic power configurations supporting stable 12V to 24V DC systems. Includes comprehensive reverse polarity protection.</p>
-    </div>
-    <div class="card">
-      <h3>Tamper-Evident Architecture</h3>
-      <p>Features structural chassis lead sealing coupled with an active safety failsafe mechanism. System automatically triggers log alerts upon harness interruption.</p>
-    </div>
-    <div class="card">
-      <h3>Industrial Resilience</h3>
-      <p>IP67 ruggedized structural housing resilient to harsh engine heat cycles, localized engine oil exposures, and continuous vibration stress profiles.</p>
-    </div>
-    <div class="card">
-      <h3>Speed Limiter Specfication</h3>
-       <p>View the SPF approved Speed Limiter Specification.</p>
-      <a href="./SPF_Speed_limiter_Specs.pdf" target="_blank" class="btn" style="padding: 10px 20px; font-size: 14px; background: var(--primary-color);">View & Download Specs (PDF)</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="psg" style="background-color: #ffffff; display: block;">
-  <h2>PSG Grant Application & Authorized Installer Status</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  
-  <p style="max-width:800px; margin: 0 auto 30px auto; color:#444; font-weight: 500;">
-    Claim up to **50% funding support** through the Productivity Solutions Grant (PSG) for eligible commercial assets. Follow our direct blueprint submission sequence:
-  </p>
-
-  <div class="grant-steps">
-    <div class="card">
-      <h3>Step 1: Secure Quote</h3>
-      <p>Submit your enterprise fleet specifics using our digital booking form below to secure your official, grant-compliant Virtue Quest itemized quotation.</p>
-    </div>
-    <div class="card">
-      <h3>Step 2: Access BGP</h3>
-      <p>Authenticate into the official **Business Grants Portal (BGP)** utilizing your corporate CorpPass token to initiate your funding application.</p>
-    </div>
-    <div class="card">
-      <h3>Step 3: Portal Uploads</h3>
-      <p>Navigate to 'Development' or select 'Productivity Solutions' and upload our official quote. Ensure submission is completed **before** physical hardware integration.</p>
-    </div>
-    <div class="card">
-      <h3>Step 4: Claim Processing</h3>
-      <p>Upon installation and testing clearance, submit your workshop receipt documents inside BGP to execute direct bank disbursement processes.</p>
-    </div>
-    <div class="card">
-      <h3>View: PGS Grant Application Guide</h3>
-      <p>View and Follow the step to apply for PSG grant if needed. Installation can start once PSG grant application is submitted.</p>
-      <a href="./PSG_Grant_Application.pdf" target="_blank" class="btn" style="padding: 10px 20px; font-size: 14px; background: var(--primary-color);">View & Download PSG Guide (PDF)</a>
+    <div class="stats-row">
+        <div class="stat-item"><div class="stat-number" id="reportsToday">0</div><div class="stat-label">Today's reports</div></div>
+        <div class="stat-item"><div class="stat-number" id="openRequestsCount">0</div><div class="stat-label">Open requests</div></div>
+        <div class="stat-item"><div class="stat-number" id="paidOut">0</div><div class="stat-label">Paid out (month)</div></div>
     </div>
 
-  </div>
+    <div class="main-content">
+        <!-- FEED PAGE (User & Admin permissions controlled) -->
+        <div id="feedPage" class="page active-page">
+            <div class="section-title"><span>📍 Live Reports <span id="hourBadge">(last 3h)</span></span><button id="clearAllBtn" style="background:none; border:none; color:#ef4444; font-size:12px; display:none;" class="admin-only"><i class="fas fa-trash"></i> Clear all</button></div>
+            <div id="feedList"></div>
+            <div id="openRequestsFeedSection"></div>
+            
+            <!-- ADMIN DASHBOARD (visible only to admin) -->
+            <div id="adminDashboard" class="admin-panel" style="display: none;">
+                <div class="admin-title"><i class="fas fa-user-shield"></i> Admin Control Hub</div>
+                <div class="admin-grid">
+                    <div class="permission-toggle"><span><i class="fas fa-lock-open"></i> User can upload reports</span> <label class="switch"><input type="checkbox" id="permUpload" checked> <span style="margin-left:8px;">✅</span></label></div>
+                    <div class="permission-toggle"><span><i class="fas fa-hand-holding-usd"></i> User can post requests</span> <input type="checkbox" id="permRequest" checked style="width:20px;"></div>
+                    <div class="permission-toggle"><span><i class="fas fa-coins"></i> User can unlock paid reports</span> <input type="checkbox" id="permUnlock" checked></div>
+                    <div class="permission-toggle"><span><i class="fas fa-heart"></i> User can like & interact</span> <input type="checkbox" id="permLike" checked></div>
+                    <div class="admin-row"><input type="text" id="adminTargetUser" placeholder="Username to credit"> <input type="number" id="adminCoinAmount" placeholder="Coins"> <button id="adminAddCoinsBtn" class="admin-btn"><i class="fas fa-coins"></i> Add Coins</button></div>
+                    <div class="admin-row"><button id="adminResetAllBtn" class="admin-btn danger-btn"><i class="fas fa-database"></i> Reset Demo Data</button> <button id="adminViewAllUsersBtn" class="admin-btn"><i class="fas fa-users"></i> Show Users</button></div>
+                    <div id="userListAdmin" style="font-size:12px; margin-top:8px;"></div>
+                </div>
+            </div>
+        </div>
 
-  <div class="document-container">
-    <div class="document-info">
-      <h3>Official Traffic Police Authorization Proof</h3>
-      <p>Verify our authorized status instantly. Check the official Singapore Police Force (SPF) statutory list highlighting **Virtue Quest** as an active licensed installation partner.</p>
-      <a href="./Virtue_Quest_SPF_Authorized_Certificate.pdf" target="_blank" class="btn" style="padding: 10px 20px; font-size: 14px; background: var(--primary-color);">View & Download Certificate (PDF)</a>
+        <!-- UPLOAD PAGE -->
+        <div id="uploadPage" class="page">
+            <div class="section-title"><i class="fas fa-camera"></i> Share intel</div>
+            <div class="form-card">
+                <div class="form-group"><label>📍 Location *</label><input type="text" id="uploadLocation" placeholder="e.g., Orchard MRT Exit A"></div>
+                <div class="form-group"><label>📝 Description</label><textarea id="uploadDesc" rows="2" placeholder="Crowd, queue status..."></textarea></div>
+                <div class="form-group"><label>📸 Media</label><div class="media-upload-area" id="mediaUploadArea" style="border:2px dashed #cbd5e1; border-radius:20px; padding:20px; text-align:center; cursor:pointer;"><i class="fas fa-cloud-upload-alt" style="font-size: 28px;"></i><p>Click to select</p><input type="file" id="uploadMedia" accept="image/*,video/*" style="display:none;"></div><div id="uploadPreview" style="margin-top:12px; border-radius:20px; overflow:hidden; display:none;"></div></div>
+                <div class="form-group"><label>🔒 Visibility</label><select id="priceSelect"><option value="free">Free for all</option><option value="paid">Paid (15 coins)</option></select></div>
+                <button class="submit-btn" id="publishBtn"><i class="fas fa-cloud-upload-alt"></i> Publish (GPS stamped)</button>
+            </div>
+        </div>
+
+        <!-- REQUESTS PAGE -->
+        <div id="requestsPage" class="page">
+            <div class="section-title">📢 Request live data</div>
+            <div class="form-card">
+                <p style="margin-bottom: 12px;">Cost: 20 coins + reward to responder.</p>
+                <div class="form-group"><label>📍 Target location</label><input type="text" id="reqLoc" placeholder="e.g., Jewel Shake Shack queue"></div>
+                <div class="form-group"><label>📋 Details</label><textarea id="reqDetails" rows="2" placeholder="Need video of entrance..."></textarea></div>
+                <div class="form-group"><label>💰 Reward</label><input type="number" id="reqReward" value="8" min="5" max="50"></div>
+                <button class="submit-btn" id="createReqBtn"><i class="fas fa-hand-holding-usd"></i> Post request (20+reward coins)</button>
+            </div>
+            <div class="section-title">My requests</div><div id="userRequestsList"></div>
+        </div>
     </div>
-    <div style="font-size: 60px; color: var(--dark-green); padding: 0 20px;">🛡️</div>
-  </div>
-</section>
 
-<section class="section" id="services" style="background-color: var(--light-bg); display: block;">
-  <h2>Our Services</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <div class="services">
-    <div class="card">
-      <h3>Speed Limiter Installation</h3>
-      <p>Certified 60km/h calibration and official tamper-proof sealing by an SPF Authorized Agent.</p>
-    </div>
-    <div class="card">
-      <h3>No Void in Vehicle Warranty</h3>
-      <p>Advanced plug-and-play connections. Absolutely no cutting of factory wiring harnesses.</p>
-    </div>
-    <div class="card">
-      <h3>On-Site Mobile Teams</h3>
-      <p>Convenient, rapid deployments right at your yard or company location islandwide to reduce fleet downtime.</p>
-    </div>
-    <div class="card">
-      <h3>Transparent Pricing</h3>
-      <p>Nett price structure with absolute clarity. No GST. Backed fully by our comprehensive 5-year hardware warranty.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section why-choose-us" style="display: block;">
-  <h2>Why Choose Virtue Quest</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <div class="benefits-grid">
-    <div class="benefit-item">✔️ Official SPF Approved Installer</div>
-    <div class="benefit-item">✔️ 30-Min Fast Turnaround</div>
-    <div class="benefit-item">✔️ Passes LTA/bizSAFE Risk Audits</div>
-    <div class="benefit-item">✔️ Eligible for Up to 50% PSG Grants</div>
-  </div>
-</section>
-
-<section class="section" id="quotation" style="display: block;">
-  <h2>Request Quotation & Fleet Booking</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <form id="quoteForm" class="custom-form">
-    <label for="company">Company Name</label>
-    <input type="text" id="company" placeholder="e.g. Logistics Pte Ltd" required>
-
-    <label for="address">Company Address / Fleet Location</label>
-    <input type="text" id="address" placeholder="e.g. 12 Tuas South Ave..." required>
-
-    <label for="person">Contact Person</label>
-    <input type="text" id="person" required>
-
-    <label for="phone">Contact Number (Mobile)</label>
-    <input type="text" id="phone" placeholder="e.g. 91234567" required>
-
-    <label for="email">Email Address</label>
-    <input type="email" id="email">
-
-    <label for="vehicle">Lorry Brand / Model</label>
-    <select id="vehicle">
-      <option>ISUZU (e.g. NPR / NQR)</option>
-      <option>TOYOTA (e.g. Dyna)</option>
-      <option>HINO (e.g. 300 / 500)</option>
-      <option>MITSUBISHI FUSO (e.g. Canter)</option>
-      <option>NISSAN CABSTAR</option>
-      <option>Others</option>
-    </select>
-
-    <label for="plate">Vehicle Plate Number(s)</label>
-    <input type="text" id="plate" placeholder="e.g. GBF1234A, GBA5678Z (Separate with commas)">
-
-    <label for="bookingDate">Preferred On-Site Installation Date</label>
-    <input type="date" id="bookingDate" required>
-
-    <label for="remarks">Additional Remarks (e.g., Number of trucks, specific deadline issues)</label>
-    <textarea id="remarks" rows="5" placeholder="Let us know if you need urgent support or bulk pricing..."></textarea>
-
-    <button type="button" onclick="sendWhatsApp()">
-      Submit via WhatsApp
-    </button>
-  </form>
-</section>
-
-<section class="section" id="referral" style="background-color: var(--light-bg); display: block;">
-  <h2>Earn Cash Rewards: Register As A Referrer</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <p style="max-width:700px; margin: 0 auto 35px auto; color:#333; font-weight: 500; font-size: 17px;">
-    💰 Know fleet managers, lorry owners, or logistics operators scrambling to meet the TP deadlines? Refer them to Virtue Quest and **earn up to S$30** for every successful vehicle installation! No payout ceilings.
-  </p>
-  
-  <form id="referralForm" class="custom-form">
-    <label for="refName">Your Full Name</label>
-    <input type="text" id="refName" placeholder="e.g. John Tan" required>
-
-    <label for="refContact">Your Mobile Number (For PayNow Transfer)</label>
-    <input type="text" id="refContact" placeholder="e.g. 98765432" required>
-
-    <label for="refEmail">Your Email Address</label>
-    <input type="email" id="refEmail" placeholder="e.g. john@gmail.com">
-
-    <label for="leadCompany">Referred Company Name</label>
-    <input type="text" id="leadCompany" placeholder="e.g. Target Logistics Company" required>
-
-    <label for="leadContactName">Company Contact Person</label>
-    <input type="text" id="leadContactName" placeholder="e.g. Mr. Lim (Fleet Manager)" required>
-
-    <label for="leadPhone">Company Mobile Number</label>
-    <input type="text" id="leadPhone" placeholder="e.g. 91112222" required>
-
-    <label for="leadDetails">Estimated Number of Vehicles / Specific Remarks</label>
-    <textarea id="leadDetails" rows="4" placeholder="e.g. Has 5 units of Isuzu 10ft trucks needing installation before July deadline."></textarea>
-
-    <button type="button" onclick="sendReferralWhatsApp()" style="background: var(--primary-color);">
-      Submit Lead via WhatsApp & Secure Reward
-    </button>
-  </form>
-</section>
-
-<section class="section" id="contact" style="background-color: var(--light-bg); display: block;">
-  <h2>Contact Our Operations Hotline</h2>
-  <div style="clear: both; display: block; margin-bottom: 30px;"></div>
-  <div class="contact-info">
-    <p>📞 <strong>Phone:</strong> +65 94232000</p>
-    <p>📍 <strong>Location:</strong> Singapore Islandwide On-Site Fleet Deployments</p>
-  </div>
-  <a href="https://wa.me/6594232000" target="_blank" class="btn" style="background: var(--whatsapp-color);">Chat Instantly via WhatsApp</a>
-</section>
-
-<footer class="footer">
-  <p>© 2026 Virtue Quest. Official Singapore Traffic Police Speed Limiter Authorized Agent. All rights reserved.</p>
-</footer>
+    <div class="bottom-nav"><button class="nav-item active" data-nav="feed"><i class="fas fa-newspaper"></i><span>Feed</span></button><button class="nav-item" data-nav="upload"><i class="fas fa-camera"></i><span>Upload</span></button><button class="nav-item" data-nav="requests"><i class="fas fa-clipboard-list"></i><span>Requests</span></button></div>
+</div>
 
 <script>
-function sendWhatsApp(){
-  let company = document.getElementById("company").value;
-  let address = document.getElementById("address").value;
-  let person = document.getElementById("person").value;
-  let phone = document.getElementById("phone").value;
-  let email = document.getElementById("email").value;
-  let vehicle = document.getElementById("vehicle").value;
-  let plate = document.getElementById("plate").value;
-  let bookingDate = document.getElementById("bookingDate").value;
-  let remarks = document.getElementById("remarks").value;
-
-  if(!company || !address || !person || !phone || !bookingDate){
-    alert("Please fill in all required fields to submit your registration request.");
-    return;
-  }
-
-  let message =
-`🚨 SPF Speed Limiter Installation Booking Request
-
-🏢 Company Name: ${company}
-📍 Fleet Address: ${address}
-👤 Contact Person: ${person}
-📱 Phone Number: ${phone}
-📧 Email: ${email || 'N/A'}
-🚚 Vehicle Type: ${vehicle}
-🔢 Vehicle Plate(s): ${plate || 'N/A'}
-📅 Preferred Date: ${bookingDate}
-
-💬 Remarks/Fleet Volume:
-${remarks || 'No additional remarks.'}`;
-
-  let whatsappURL = "https://wa.me/6594232000?text=" + encodeURIComponent(message);
-  window.open(whatsappURL, "_blank");
-}
-
-function sendReferralWhatsApp(){
-  let refName = document.getElementById("refName").value;
-  let refContact = document.getElementById("refContact").value;
-  let refEmail = document.getElementById("refEmail").value;
-  let leadCompany = document.getElementById("leadCompany").value;
-  let leadContactName = document.getElementById("leadContactName").value;
-  let leadPhone = document.getElementById("leadPhone").value;
-  let leadDetails = document.getElementById("leadDetails").value;
-
-  if(!refName || !refContact || !leadCompany || !leadContactName || !leadPhone){
-    alert("Please complete all required fields to submit a referral partner application.");
-    return;
-  }
-
-  let refMessage = 
-`🤝 NEW SPEED LIMITER REFERRAL PARTNER SUBMISSION
-
-👤 Referrer Name: ${refName}
-📱 Referrer PayNow Phone: ${refContact}
-📧 Referrer Email: ${refEmail || 'N/A'}
-
-🏢 Referred Client Business: ${leadCompany}
-👤 Client Contact Person: ${leadContactName}
-📞 Client Mobile Number: ${leadPhone}
-📝 Fleet Volume / Context: 
-${leadDetails || 'No additional lead specs provided.'}`;
-
-  let referralURL = "https://wa.me/6594232000?text=" + encodeURIComponent(refMessage);
-  window.open(referralURL, "_blank");
-}
+    // ==================== AUTH & ROLE SYSTEM ====================
+    let currentUser = { username: null, role: null, coins: 100 };
+    let reports = [], requestsList = [];
+    let nextReportId = 101, nextRequestId = 301;
+    let selectedFileData = null, selectedFileType = null;
+    
+    // Permissions (admin controlled)
+    let permissions = { canUpload: true, canRequest: true, canUnlock: true, canLike: true };
+    
+    // Helper functions
+    function showToast(msg) { let t = document.querySelector('.toast-msg'); if(t) t.remove(); const toast = document.createElement('div'); toast.className = 'toast-msg'; toast.innerText = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2500); }
+    function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])); }
+    function getCurrentDateTime() { return new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' }); }
+    function isWithin3Hours(ts) { return (Date.now() - ts) <= 3 * 3600000; }
+    function getGeoString() { return new Promise((resolve) => { if(!navigator.geolocation) resolve("Unknown"); else navigator.geolocation.getCurrentPosition(pos => resolve(`${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)}`), () => resolve("Unavailable")); }); }
+    
+    // Storage
+    function loadGlobalData() {
+        const storedReports = localStorage.getItem('thirdeye_reports_global');
+        if(storedReports) reports = JSON.parse(storedReports);
+        else seedDemoReports();
+        const storedReqs = localStorage.getItem('thirdeye_requests_global');
+        if(storedReqs) requestsList = JSON.parse(storedReqs);
+        else requestsList = [];
+        if(reports.length) nextReportId = Math.max(...reports.map(r=>r.id)) + 1;
+        if(requestsList.length) nextRequestId = Math.max(...requestsList.map(r=>r.id)) + 1;
+    }
+    function saveGlobalData() { localStorage.setItem('thirdeye_reports_global', JSON.stringify(reports)); localStorage.setItem('thirdeye_requests_global', JSON.stringify(requestsList)); }
+    function seedDemoReports() {
+        const now = Date.now();
+        reports = [
+            { id:101, location:"Sheng Siong Tampines", description:"Short queue, 2 min wait", mediaData:null, mediaType:"image", isPaid:false, priceCoins:0, timestamp:now-600000, dateTimeStr:"10 min ago", geo:"1.3521,103.8198", author:"rachel_t", unlockCount:12, earnedCoins:0, likes:7, views:234 },
+            { id:102, location:"ABC Shop Bugis", description:"Long queue 25min", mediaData:null, mediaType:"image", isPaid:true, priceCoins:15, timestamp:now-1800000, dateTimeStr:"30 min ago", geo:"1.3005,103.8568", author:"marcus", unlockCount:45, earnedCoins:30, likes:23, views:512 },
+            { id:103, location:"IKEA IMM Lot", description:"Parking L4 full, L3 free", mediaData:null, mediaType:"image", isPaid:false, priceCoins:0, timestamp:now-240000, dateTimeStr:"4 min ago", geo:"1.3262,103.7421", author:"priya_s", unlockCount:8, earnedCoins:0, likes:4, views:98 }
+        ];
+        saveGlobalData();
+    }
+    
+    // Save user-specific coin balance
+    function saveUserCoins() { localStorage.setItem(`user_coins_${currentUser.username}`, currentUser.coins); }
+    function loadUserCoins() { const saved = localStorage.getItem(`user_coins_${currentUser.username}`); if(saved) currentUser.coins = parseInt(saved); else currentUser.coins = (currentUser.role === 'admin' ? 500 : 120); }
+    
+    // Admin functions
+    function adminAddCoinsToUser() { const target = document.getElementById('adminTargetUser').value.trim(); const amount = parseInt(document.getElementById('adminCoinAmount').value); if(!target || isNaN(amount)) return showToast("Enter username & amount"); if(target === currentUser.username) { currentUser.coins += amount; saveUserCoins(); updateUI(); showToast(`Added ${amount} coins to ${target}`); } else { showToast(`Demo: only current user can be credited. Use admin panel.`); } document.getElementById('adminCoinAmount').value = ''; }
+    function resetDemoData() { if(confirm("Reset all reports and requests?")) { seedDemoReports(); requestsList = []; saveGlobalData(); updateUI(); showToast("Data reset to demo"); } }
+    function applyPermissions() { permissions.canUpload = document.getElementById('permUpload').checked; permissions.canRequest = document.getElementById('permRequest').checked; permissions.canUnlock = document.getElementById('permUnlock').checked; permissions.canLike = document.getElementById('permLike').checked; updateUIBasedOnPermissions(); showToast("Permissions updated"); }
+    function updateUIBasedOnPermissions() { const uploadBtn = document.querySelector('[data-nav="upload"]'); const reqNav = document.querySelector('[data-nav="requests"]'); if(uploadBtn) uploadBtn.style.opacity = permissions.canUpload ? '1' : '0.4'; if(reqNav) reqNav.style.opacity = permissions.canRequest ? '1' : '0.4'; }
+    
+    // Report actions
+    async function publishReport() {
+        if(!permissions.canUpload && currentUser.role !== 'admin') { showToast("Admin disabled uploads for users"); return; }
+        const loc = document.getElementById('uploadLocation').value.trim(); const desc = document.getElementById('uploadDesc').value.trim(); const priceMode = document.getElementById('priceSelect').value;
+        if(!loc) return showToast("Location required"); if(!selectedFileData) return showToast("Select media");
+        const geo = await getGeoString();
+        const newReport = { id:nextReportId++, location:loc, description:desc || "Live update", mediaData:selectedFileData, mediaType:selectedFileType, isPaid:priceMode==='paid', priceCoins:priceMode==='paid'?15:0, timestamp:Date.now(), dateTimeStr:getCurrentDateTime(), geo:geo, author:currentUser.username, unlockCount:0, earnedCoins:0, likes:0, views:0 };
+        reports.unshift(newReport); saveGlobalData();
+        document.getElementById('uploadLocation').value = ''; document.getElementById('uploadDesc').value = ''; selectedFileData=null; document.getElementById('uploadPreview').style.display='none'; document.getElementById('uploadMedia').value='';
+        showToast("✅ Published + GPS stamped!"); updateUI(); switchToPage('feed');
+    }
+    function unlockReport(id) { if(!permissions.canUnlock && currentUser.role!=='admin') return showToast("Admin disabled unlocking"); const r = reports.find(r=>r.id===id); if(!r||!r.isPaid) return; if(currentUser.coins < r.priceCoins) return showToast(`Need ${r.priceCoins} coins`); currentUser.coins -= r.priceCoins; const idx = reports.findIndex(rr=>rr.id===id); if(idx!==-1) { reports[idx].earnedCoins = (reports[idx].earnedCoins||0)+10; reports[idx].unlockCount++; } saveUserCoins(); saveGlobalData(); updateUI(); showToast(`Unlocked! -${r.priceCoins} coins`); }
+    function toggleLike(id) { if(!permissions.canLike && currentUser.role!=='admin') return showToast("Liking disabled"); const r = reports.find(r=>r.id===id); if(r) { r.likes = (r.likes||0)+1; saveGlobalData(); updateUI(); } }
+    function deleteReport(id) { const r = reports.find(r=>r.id===id); if(r && (r.author === currentUser.username || currentUser.role === 'admin')) { reports = reports.filter(rr=>rr.id!==id); saveGlobalData(); updateUI(); showToast("Deleted"); } else showToast("Not authorized"); }
+    function createRequest() { if(!permissions.canRequest && currentUser.role!=='admin') return showToast("Admin disabled requests"); const loc = document.getElementById('reqLoc').value.trim(); const det = document.getElementById('reqDetails').value.trim(); let rew = parseInt(document.getElementById('reqReward').value); if(isNaN(rew)) rew=8; const total = 20+rew; if(currentUser.coins < total) return showToast(`Need ${total} coins`); currentUser.coins -= total; requestsList.push({ id:nextRequestId++, location:loc, details:det||"Request for live media", reward:rew, requester:currentUser.username, totalCost:total, status:'open', createdAt:getCurrentDateTime() }); saveUserCoins(); saveGlobalData(); updateUI(); switchToPage('feed'); showToast(`Request posted, cost ${total} coins`); }
+    function fulfillRequest(reqId) { const req = requestsList.find(r=>r.id===reqId && r.status==='open'); if(!req) return; const fakeReport = { id:nextReportId++, location:req.location+" (response)", description:`📸 Fulfilled: ${req.details}`, mediaData:null, mediaType:'image', isPaid:false, priceCoins:0, timestamp:Date.now(), dateTimeStr:getCurrentDateTime(), geo:"Live response", author:currentUser.username, unlockCount:0, earnedCoins:0, likes:0, views:0 }; reports.unshift(fakeReport); const idx = requestsList.findIndex(r=>r.id===reqId); requestsList[idx].status='fulfilled'; currentUser.coins += req.reward; saveUserCoins(); saveGlobalData(); updateUI(); showToast(`✅ Fulfilled! +${req.reward} coins`); }
+    function clearAllReports() { if(currentUser.role==='admin') { reports = []; saveGlobalData(); updateUI(); showToast("All reports cleared"); } else showToast("Admin only"); }
+    
+    // Rendering feed & UI
+    function renderFeed() {
+        const feedDiv = document.getElementById('feedList'); const filtered = reports.filter(r=>isWithin3Hours(r.timestamp)).sort((a,b)=>b.timestamp-a.timestamp);
+        if(filtered.length===0) { feedDiv.innerHTML='<div class="report-card" style="text-align:center;">📍 No fresh reports in 3h. Be the first!</div>'; return; }
+        let html = '';
+        filtered.forEach(r=> { r.views = (r.views||0)+1; 
+            let mediaHtml = r.mediaData ? (r.mediaType==='image' ? `<div class="media-preview-small"><img src="${r.mediaData}"></div>` : `<div class="media-preview-small"><video controls src="${r.mediaData}"></video></div>`) : `<div class="media-preview-small" style="background:#e2e8f0; padding:20px; text-align:center;"><i class="fas fa-image"></i></div>`;
+            const badge = r.isPaid ? `<span class="badge-paid">🔒 ${r.priceCoins} coins</span>` : `<span class="badge-free">Free</span>`;
+            let action = r.isPaid ? `<button class="unlock-btn" data-unlock="${r.id}">Unlock · ${r.priceCoins} coins</button>` : '';
+            const likeBtn = `<button class="like-btn" data-like="${r.id}"><i class="fas fa-heart"></i> ${r.likes||0}</button>`;
+            const deleteBtn = (r.author===currentUser.username || currentUser.role==='admin') ? `<button class="delete-report" data-delete="${r.id}" style="background:#fee2e2; border:none; padding:4px 10px; border-radius:20px;"><i class="fas fa-trash"></i></button>` : '';
+            html += `<div class="report-card"><div class="report-location"><strong><i class="fas fa-map-pin"></i> ${escapeHtml(r.location)}</strong><div>${badge} ${deleteBtn}</div></div><div class="report-desc">${escapeHtml(r.description)}</div><div class="report-meta"><span class="gps-badge"><i class="fas fa-satellite-dish"></i> ${escapeHtml(r.geo)}</span></div>${mediaHtml}<div class="report-meta"><span><i class="far fa-clock"></i> ${r.dateTimeStr}</span><span><i class="fas fa-user"></i> ${escapeHtml(r.author)}</span><span><i class="fas fa-eye"></i> ${r.views||0}</span>${likeBtn}${action}</div></div>`;
+        });
+        feedDiv.innerHTML = html;
+        // requests in feed
+        const openReqs = requestsList.filter(r=>r.status==='open');
+        const reqContainer = document.getElementById('openRequestsFeedSection');
+        if(openReqs.length) { let reqHtml = `<div class="section-title">🎯 Open bounties</div>`; openReqs.forEach(req=>{ reqHtml+=`<div class="report-card request-card"><div><strong>${escapeHtml(req.location)}</strong><span class="badge-paid">Reward: ${req.reward} coins</span></div><div>${escapeHtml(req.details)}</div><button class="unlock-btn" data-fulfill="${req.id}">Fulfill +${req.reward} coins</button></div>`; }); reqContainer.innerHTML = reqHtml; } else reqContainer.innerHTML='';
+        attachDynamicEvents();
+    }
+    function attachDynamicEvents() { document.querySelectorAll('[data-unlock]').forEach(b=>b.addEventListener('click',e=>unlockReport(parseInt(b.dataset.unlock)))); document.querySelectorAll('[data-like]').forEach(b=>b.addEventListener('click',e=>toggleLike(parseInt(b.dataset.like)))); document.querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',e=>deleteReport(parseInt(b.dataset.delete)))); document.querySelectorAll('[data-fulfill]').forEach(b=>b.addEventListener('click',e=>fulfillRequest(parseInt(b.dataset.fulfill)))); }
+    function renderMyRequests() { const container = document.getElementById('userRequestsList'); const my = requestsList.filter(r=>r.requester===currentUser.username); if(!my.length) { container.innerHTML='<div class="report-card">No requests yet</div>'; return; } container.innerHTML = my.map(r=>`<div class="report-card"><strong>${escapeHtml(r.location)}</strong> <span class="badge-paid">${r.status}</span><div>${escapeHtml(r.details)}</div><div>Reward: ${r.reward} coins</div></div>`).join(''); }
+    function updateUI() { document.getElementById('walletBalance').innerText = currentUser.coins; document.getElementById('reportsToday').innerText = reports.filter(r=>new Date(r.timestamp).toDateString()===new Date().toDateString()).length; document.getElementById('openRequestsCount').innerText = requestsList.filter(r=>r.status==='open').length; document.getElementById('paidOut').innerText = reports.reduce((s,r)=>s+(r.earnedCoins||0),0); renderFeed(); renderMyRequests(); if(currentUser.role==='admin') document.getElementById('adminDashboard').style.display = 'block'; else document.getElementById('adminDashboard').style.display = 'none'; const adminOnlyElements = document.querySelectorAll('.admin-only'); adminOnlyElements.forEach(el=>{ if(currentUser.role==='admin') el.style.display='block'; else el.style.display='none'; }); updateUIBasedOnPermissions(); }
+    
+    // Login & Logout
+    function login(username, role) { currentUser.username = username; currentUser.role = role; loadUserCoins(); if(role==='admin') currentUser.coins = 999; saveUserCoins(); document.getElementById('loginOverlay').style.display = 'none'; document.getElementById('appContainer').style.display = 'flex'; document.getElementById('roleText').innerText = role === 'admin' ? '👑 Admin Mode' : `👤 User: ${username}`; updateUI(); }
+    function logout() { document.getElementById('loginOverlay').style.display = 'flex'; document.getElementById('appContainer').style.display = 'none'; currentUser = null; }
+    
+    // Media upload
+    function setupMedia() { const area = document.getElementById('mediaUploadArea'); const input = document.getElementById('uploadMedia'); const preview = document.getElementById('uploadPreview'); area.addEventListener('click',()=>input.click()); input.addEventListener('change',(e)=>{ const file=e.target.files[0]; if(!file) return; selectedFileType = file.type.startsWith('image/')?'image':'video'; const reader = new FileReader(); reader.onload = ev=>{ selectedFileData=ev.target.result; preview.style.display='block'; preview.innerHTML = selectedFileType==='image'? `<img src="${selectedFileData}" style="width:100%; border-radius:20px;">` : `<video controls src="${selectedFileData}" style="width:100%; border-radius:20px;"></video>`; }; reader.readAsDataURL(file); }); }
+    
+    function initApp() { loadGlobalData(); setupMedia(); document.getElementById('publishBtn').addEventListener('click',publishReport); document.getElementById('createReqBtn').addEventListener('click',createRequest); document.getElementById('topUpBtn').addEventListener('click',()=>{ currentUser.coins+=50; saveUserCoins(); updateUI(); showToast("+50 coins"); }); document.getElementById('clearAllBtn').addEventListener('click',clearAllReports); document.querySelectorAll('.nav-item').forEach(btn=>btn.addEventListener('click',()=>switchToPage(btn.dataset.nav))); document.getElementById('globalLogoutBtn').addEventListener('click',logout); document.getElementById('adminAddCoinsBtn')?.addEventListener('click',adminAddCoinsToUser); document.getElementById('adminResetAllBtn')?.addEventListener('click',resetDemoData); document.getElementById('permUpload')?.addEventListener('change',applyPermissions); document.getElementById('permRequest')?.addEventListener('change',applyPermissions); document.getElementById('permUnlock')?.addEventListener('change',applyPermissions); document.getElementById('permLike')?.addEventListener('change',applyPermissions); }
+    function switchToPage(pageId) { document.querySelectorAll('.page').forEach(p=>p.classList.remove('active-page')); document.getElementById(pageId+'Page').classList.add('active-page'); document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active')); document.querySelector(`[data-nav="${pageId}"]`).classList.add('active'); if(pageId==='feed') renderFeed(); if(pageId==='requests') renderMyRequests(); }
+    
+    // Event listeners for login
+    document.getElementById('loginBtn').addEventListener('click',()=>{ const u = document.getElementById('loginUsername').value.trim(); const p = document.getElementById('loginPassword').value; if(u==='admin' && p==='admin123') login('admin','admin'); else showToast("Invalid admin credentials. Use admin/admin123"); });
+    document.getElementById('demoUserBtn').addEventListener('click',()=>{ const demoName = "user_"+Math.floor(Math.random()*1000); login(demoName,'user'); });
+    initApp();
 </script>
-
 </body>
 </html>
